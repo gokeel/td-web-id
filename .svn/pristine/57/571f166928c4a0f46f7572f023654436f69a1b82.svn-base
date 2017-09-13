@@ -1,4 +1,0 @@
-error code list:
-200		->	Request respond success
-301		->	Request respond error
-235		->	Teacher is not verified
