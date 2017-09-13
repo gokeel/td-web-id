@@ -199,7 +199,6 @@ class Frontpage extends MY_Controller {
 	}
 	
 	function my_account(){
-		print_r($this->session->userdata);
 		if($this->logged_in and !$this->admin_granted){
 			$user_id = $this->session->userdata('userid');
 			

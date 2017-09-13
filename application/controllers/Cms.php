@@ -11,6 +11,10 @@ class Cms extends MY_Controller {
 		redirect('cms/dashboard');
 	}
 
+	function ci_version(){
+		echo CI_VERSION;
+	}
+
 	function dashboard(){
 		$this->load->model('Software_m');
 		$this->check_user_access();
