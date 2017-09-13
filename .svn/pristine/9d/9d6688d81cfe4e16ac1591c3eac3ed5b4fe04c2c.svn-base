@@ -1,0 +1,931 @@
+INFO - 20160801111707 --> Config Class Initialized
+INFO - 20160801111707 --> Hooks Class Initialized
+DEBUG - 20160801111707 --> UTF-8 Support Enabled
+INFO - 20160801111707 --> Utf8 Class Initialized
+INFO - 20160801111707 --> URI Class Initialized
+INFO - 20160801111707 --> Router Class Initialized
+INFO - 20160801111707 --> Output Class Initialized
+INFO - 20160801111707 --> Security Class Initialized
+DEBUG - 20160801111707 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801111707 --> Input Class Initialized
+INFO - 20160801111707 --> Language Class Initialized
+INFO - 20160801111707 --> Loader Class Initialized
+INFO - 20160801111707 --> Helper loaded: url_helper
+INFO - 20160801111707 --> Helper loaded: myfunction_helper
+INFO - 20160801111707 --> Database Driver Class Initialized
+INFO - 20160801111707 --> Session: Class initialized using 'database' driver.
+INFO - 20160801111707 --> Controller Class Initialized
+INFO - 20160801111707 --> Model Class Initialized
+INFO - 20160801111707 --> Model Class Initialized
+INFO - 20160801111707 --> Model Class Initialized
+DEBUG - 20160801111707 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111707 --> Model Class Initialized
+DEBUG - 20160801111707 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111707 --> Model Class Initialized
+DEBUG - 20160801111707 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111707 --> Model Class Initialized
+DEBUG - 20160801111707 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111707 --> Model Class Initialized
+DEBUG - 20160801111707 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111707 --> Model Class Initialized
+DEBUG - 20160801111707 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111707 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801111707 --> Helper loaded: timezone_helper
+DEBUG - 20160801111707 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801111707 --> Final output sent to browser
+DEBUG - 20160801111707 --> Total execution time: 0.0670
+INFO - 20160801111807 --> Config Class Initialized
+INFO - 20160801111807 --> Hooks Class Initialized
+DEBUG - 20160801111807 --> UTF-8 Support Enabled
+INFO - 20160801111807 --> Utf8 Class Initialized
+INFO - 20160801111807 --> URI Class Initialized
+INFO - 20160801111807 --> Router Class Initialized
+INFO - 20160801111807 --> Output Class Initialized
+INFO - 20160801111807 --> Security Class Initialized
+DEBUG - 20160801111807 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801111807 --> Input Class Initialized
+INFO - 20160801111807 --> Language Class Initialized
+INFO - 20160801111807 --> Loader Class Initialized
+INFO - 20160801111807 --> Helper loaded: url_helper
+INFO - 20160801111807 --> Helper loaded: myfunction_helper
+INFO - 20160801111807 --> Database Driver Class Initialized
+INFO - 20160801111807 --> Session: Class initialized using 'database' driver.
+INFO - 20160801111807 --> Controller Class Initialized
+INFO - 20160801111807 --> Model Class Initialized
+INFO - 20160801111807 --> Model Class Initialized
+INFO - 20160801111807 --> Model Class Initialized
+DEBUG - 20160801111807 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111807 --> Model Class Initialized
+DEBUG - 20160801111807 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111807 --> Model Class Initialized
+DEBUG - 20160801111807 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111807 --> Model Class Initialized
+DEBUG - 20160801111807 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111807 --> Model Class Initialized
+DEBUG - 20160801111807 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111807 --> Model Class Initialized
+DEBUG - 20160801111807 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111807 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801111807 --> Helper loaded: timezone_helper
+DEBUG - 20160801111807 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801111807 --> Final output sent to browser
+DEBUG - 20160801111807 --> Total execution time: 0.0720
+INFO - 20160801111840 --> Config Class Initialized
+INFO - 20160801111840 --> Hooks Class Initialized
+DEBUG - 20160801111840 --> UTF-8 Support Enabled
+INFO - 20160801111840 --> Utf8 Class Initialized
+INFO - 20160801111840 --> URI Class Initialized
+INFO - 20160801111840 --> Router Class Initialized
+INFO - 20160801111840 --> Output Class Initialized
+INFO - 20160801111840 --> Security Class Initialized
+DEBUG - 20160801111840 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801111840 --> Input Class Initialized
+INFO - 20160801111840 --> Language Class Initialized
+INFO - 20160801111841 --> Loader Class Initialized
+INFO - 20160801111841 --> Helper loaded: url_helper
+INFO - 20160801111841 --> Helper loaded: myfunction_helper
+INFO - 20160801111841 --> Database Driver Class Initialized
+INFO - 20160801111841 --> Session: Class initialized using 'database' driver.
+INFO - 20160801111841 --> Controller Class Initialized
+INFO - 20160801111841 --> Model Class Initialized
+INFO - 20160801111841 --> Model Class Initialized
+INFO - 20160801111841 --> Model Class Initialized
+DEBUG - 20160801111841 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111841 --> Model Class Initialized
+DEBUG - 20160801111841 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111841 --> Model Class Initialized
+DEBUG - 20160801111841 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111841 --> Model Class Initialized
+DEBUG - 20160801111841 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111841 --> Model Class Initialized
+DEBUG - 20160801111841 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111841 --> Model Class Initialized
+DEBUG - 20160801111841 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111841 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801111841 --> Model Class Initialized
+DEBUG - 20160801111841 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20160801111841 --> Config file loaded: C:\xampp\htdocs\guruprivat\application\config/paypal.php
+INFO - 20160801111908 --> Config Class Initialized
+INFO - 20160801111908 --> Hooks Class Initialized
+DEBUG - 20160801111908 --> UTF-8 Support Enabled
+INFO - 20160801111908 --> Utf8 Class Initialized
+INFO - 20160801111908 --> URI Class Initialized
+INFO - 20160801111908 --> Router Class Initialized
+INFO - 20160801111908 --> Output Class Initialized
+INFO - 20160801111908 --> Security Class Initialized
+DEBUG - 20160801111908 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801111908 --> Input Class Initialized
+INFO - 20160801111908 --> Language Class Initialized
+INFO - 20160801111908 --> Loader Class Initialized
+INFO - 20160801111908 --> Helper loaded: url_helper
+INFO - 20160801111908 --> Helper loaded: myfunction_helper
+INFO - 20160801111908 --> Database Driver Class Initialized
+INFO - 20160801111908 --> Session: Class initialized using 'database' driver.
+INFO - 20160801111908 --> Controller Class Initialized
+INFO - 20160801111908 --> Model Class Initialized
+INFO - 20160801111908 --> Model Class Initialized
+INFO - 20160801111908 --> Model Class Initialized
+DEBUG - 20160801111908 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111908 --> Model Class Initialized
+DEBUG - 20160801111908 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111908 --> Model Class Initialized
+DEBUG - 20160801111908 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111908 --> Model Class Initialized
+DEBUG - 20160801111908 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111908 --> Model Class Initialized
+DEBUG - 20160801111908 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111908 --> Model Class Initialized
+DEBUG - 20160801111908 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801111908 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801111908 --> Helper loaded: timezone_helper
+DEBUG - 20160801111908 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801111908 --> Final output sent to browser
+DEBUG - 20160801111908 --> Total execution time: 0.0820
+INFO - 20160801112008 --> Config Class Initialized
+INFO - 20160801112008 --> Hooks Class Initialized
+DEBUG - 20160801112008 --> UTF-8 Support Enabled
+INFO - 20160801112008 --> Utf8 Class Initialized
+INFO - 20160801112008 --> URI Class Initialized
+INFO - 20160801112008 --> Router Class Initialized
+INFO - 20160801112008 --> Output Class Initialized
+INFO - 20160801112008 --> Security Class Initialized
+DEBUG - 20160801112008 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112008 --> Input Class Initialized
+INFO - 20160801112008 --> Language Class Initialized
+INFO - 20160801112008 --> Loader Class Initialized
+INFO - 20160801112008 --> Helper loaded: url_helper
+INFO - 20160801112008 --> Helper loaded: myfunction_helper
+INFO - 20160801112008 --> Database Driver Class Initialized
+INFO - 20160801112008 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112008 --> Controller Class Initialized
+INFO - 20160801112008 --> Model Class Initialized
+INFO - 20160801112008 --> Model Class Initialized
+INFO - 20160801112008 --> Model Class Initialized
+DEBUG - 20160801112008 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112008 --> Model Class Initialized
+DEBUG - 20160801112008 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112008 --> Model Class Initialized
+DEBUG - 20160801112008 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112008 --> Model Class Initialized
+DEBUG - 20160801112008 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112008 --> Model Class Initialized
+DEBUG - 20160801112008 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112008 --> Model Class Initialized
+DEBUG - 20160801112008 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112008 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112008 --> Helper loaded: timezone_helper
+DEBUG - 20160801112008 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112008 --> Final output sent to browser
+DEBUG - 20160801112008 --> Total execution time: 0.0770
+INFO - 20160801112108 --> Config Class Initialized
+INFO - 20160801112108 --> Hooks Class Initialized
+DEBUG - 20160801112108 --> UTF-8 Support Enabled
+INFO - 20160801112108 --> Utf8 Class Initialized
+INFO - 20160801112108 --> URI Class Initialized
+INFO - 20160801112108 --> Router Class Initialized
+INFO - 20160801112108 --> Output Class Initialized
+INFO - 20160801112108 --> Security Class Initialized
+DEBUG - 20160801112108 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112108 --> Input Class Initialized
+INFO - 20160801112108 --> Language Class Initialized
+INFO - 20160801112108 --> Loader Class Initialized
+INFO - 20160801112108 --> Helper loaded: url_helper
+INFO - 20160801112108 --> Helper loaded: myfunction_helper
+INFO - 20160801112108 --> Database Driver Class Initialized
+INFO - 20160801112108 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112108 --> Controller Class Initialized
+INFO - 20160801112108 --> Model Class Initialized
+INFO - 20160801112108 --> Model Class Initialized
+INFO - 20160801112108 --> Model Class Initialized
+DEBUG - 20160801112108 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112108 --> Model Class Initialized
+DEBUG - 20160801112108 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112108 --> Model Class Initialized
+DEBUG - 20160801112108 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112108 --> Model Class Initialized
+DEBUG - 20160801112108 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112108 --> Model Class Initialized
+DEBUG - 20160801112108 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112108 --> Model Class Initialized
+DEBUG - 20160801112108 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112108 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112108 --> Helper loaded: timezone_helper
+DEBUG - 20160801112108 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112108 --> Final output sent to browser
+DEBUG - 20160801112108 --> Total execution time: 0.0770
+INFO - 20160801112208 --> Config Class Initialized
+INFO - 20160801112208 --> Hooks Class Initialized
+DEBUG - 20160801112208 --> UTF-8 Support Enabled
+INFO - 20160801112208 --> Utf8 Class Initialized
+INFO - 20160801112208 --> URI Class Initialized
+INFO - 20160801112208 --> Router Class Initialized
+INFO - 20160801112208 --> Output Class Initialized
+INFO - 20160801112208 --> Security Class Initialized
+DEBUG - 20160801112208 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112208 --> Input Class Initialized
+INFO - 20160801112208 --> Language Class Initialized
+INFO - 20160801112208 --> Loader Class Initialized
+INFO - 20160801112208 --> Helper loaded: url_helper
+INFO - 20160801112208 --> Helper loaded: myfunction_helper
+INFO - 20160801112208 --> Database Driver Class Initialized
+INFO - 20160801112208 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112208 --> Controller Class Initialized
+INFO - 20160801112208 --> Model Class Initialized
+INFO - 20160801112208 --> Model Class Initialized
+INFO - 20160801112208 --> Model Class Initialized
+DEBUG - 20160801112208 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112208 --> Model Class Initialized
+DEBUG - 20160801112208 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112208 --> Model Class Initialized
+DEBUG - 20160801112208 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112208 --> Model Class Initialized
+DEBUG - 20160801112208 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112208 --> Model Class Initialized
+DEBUG - 20160801112208 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112208 --> Model Class Initialized
+DEBUG - 20160801112208 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112208 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112208 --> Helper loaded: timezone_helper
+DEBUG - 20160801112208 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112208 --> Final output sent to browser
+DEBUG - 20160801112208 --> Total execution time: 0.0700
+INFO - 20160801112309 --> Config Class Initialized
+INFO - 20160801112309 --> Hooks Class Initialized
+DEBUG - 20160801112309 --> UTF-8 Support Enabled
+INFO - 20160801112309 --> Utf8 Class Initialized
+INFO - 20160801112309 --> URI Class Initialized
+INFO - 20160801112309 --> Router Class Initialized
+INFO - 20160801112309 --> Output Class Initialized
+INFO - 20160801112309 --> Security Class Initialized
+DEBUG - 20160801112309 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112309 --> Input Class Initialized
+INFO - 20160801112309 --> Language Class Initialized
+INFO - 20160801112309 --> Loader Class Initialized
+INFO - 20160801112309 --> Helper loaded: url_helper
+INFO - 20160801112309 --> Helper loaded: myfunction_helper
+INFO - 20160801112309 --> Database Driver Class Initialized
+INFO - 20160801112309 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112309 --> Controller Class Initialized
+INFO - 20160801112309 --> Model Class Initialized
+INFO - 20160801112309 --> Model Class Initialized
+INFO - 20160801112309 --> Model Class Initialized
+DEBUG - 20160801112309 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112309 --> Model Class Initialized
+DEBUG - 20160801112309 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112309 --> Model Class Initialized
+DEBUG - 20160801112309 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112309 --> Model Class Initialized
+DEBUG - 20160801112309 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112309 --> Model Class Initialized
+DEBUG - 20160801112309 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112309 --> Model Class Initialized
+DEBUG - 20160801112309 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112309 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112309 --> Helper loaded: timezone_helper
+DEBUG - 20160801112309 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112309 --> Final output sent to browser
+DEBUG - 20160801112309 --> Total execution time: 0.0730
+INFO - 20160801112409 --> Config Class Initialized
+INFO - 20160801112409 --> Hooks Class Initialized
+DEBUG - 20160801112409 --> UTF-8 Support Enabled
+INFO - 20160801112409 --> Utf8 Class Initialized
+INFO - 20160801112409 --> URI Class Initialized
+INFO - 20160801112409 --> Router Class Initialized
+INFO - 20160801112409 --> Output Class Initialized
+INFO - 20160801112409 --> Security Class Initialized
+DEBUG - 20160801112409 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112409 --> Input Class Initialized
+INFO - 20160801112409 --> Language Class Initialized
+INFO - 20160801112409 --> Loader Class Initialized
+INFO - 20160801112409 --> Helper loaded: url_helper
+INFO - 20160801112409 --> Helper loaded: myfunction_helper
+INFO - 20160801112409 --> Database Driver Class Initialized
+INFO - 20160801112409 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112409 --> Controller Class Initialized
+INFO - 20160801112409 --> Model Class Initialized
+INFO - 20160801112409 --> Model Class Initialized
+INFO - 20160801112409 --> Model Class Initialized
+DEBUG - 20160801112409 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112409 --> Model Class Initialized
+DEBUG - 20160801112409 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112409 --> Model Class Initialized
+DEBUG - 20160801112409 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112409 --> Model Class Initialized
+DEBUG - 20160801112409 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112409 --> Model Class Initialized
+DEBUG - 20160801112409 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112409 --> Model Class Initialized
+DEBUG - 20160801112409 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112409 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112409 --> Helper loaded: timezone_helper
+DEBUG - 20160801112409 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112409 --> Final output sent to browser
+DEBUG - 20160801112409 --> Total execution time: 0.0790
+INFO - 20160801112509 --> Config Class Initialized
+INFO - 20160801112509 --> Hooks Class Initialized
+DEBUG - 20160801112509 --> UTF-8 Support Enabled
+INFO - 20160801112509 --> Utf8 Class Initialized
+INFO - 20160801112509 --> URI Class Initialized
+INFO - 20160801112509 --> Router Class Initialized
+INFO - 20160801112509 --> Output Class Initialized
+INFO - 20160801112509 --> Security Class Initialized
+DEBUG - 20160801112509 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112509 --> Input Class Initialized
+INFO - 20160801112509 --> Language Class Initialized
+INFO - 20160801112509 --> Loader Class Initialized
+INFO - 20160801112509 --> Helper loaded: url_helper
+INFO - 20160801112509 --> Helper loaded: myfunction_helper
+INFO - 20160801112509 --> Database Driver Class Initialized
+INFO - 20160801112509 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112509 --> Controller Class Initialized
+INFO - 20160801112509 --> Model Class Initialized
+INFO - 20160801112509 --> Model Class Initialized
+INFO - 20160801112509 --> Model Class Initialized
+DEBUG - 20160801112509 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112509 --> Model Class Initialized
+DEBUG - 20160801112509 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112509 --> Model Class Initialized
+DEBUG - 20160801112509 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112509 --> Model Class Initialized
+DEBUG - 20160801112509 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112509 --> Model Class Initialized
+DEBUG - 20160801112509 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112509 --> Model Class Initialized
+DEBUG - 20160801112509 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112509 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112509 --> Helper loaded: timezone_helper
+DEBUG - 20160801112509 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112509 --> Final output sent to browser
+DEBUG - 20160801112509 --> Total execution time: 0.0790
+INFO - 20160801112607 --> Config Class Initialized
+INFO - 20160801112607 --> Hooks Class Initialized
+DEBUG - 20160801112607 --> UTF-8 Support Enabled
+INFO - 20160801112607 --> Utf8 Class Initialized
+INFO - 20160801112607 --> URI Class Initialized
+INFO - 20160801112607 --> Router Class Initialized
+INFO - 20160801112607 --> Output Class Initialized
+INFO - 20160801112607 --> Security Class Initialized
+DEBUG - 20160801112607 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112607 --> Input Class Initialized
+INFO - 20160801112607 --> Language Class Initialized
+INFO - 20160801112607 --> Loader Class Initialized
+INFO - 20160801112607 --> Helper loaded: url_helper
+INFO - 20160801112607 --> Helper loaded: myfunction_helper
+INFO - 20160801112607 --> Database Driver Class Initialized
+INFO - 20160801112607 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112607 --> Controller Class Initialized
+INFO - 20160801112607 --> Model Class Initialized
+INFO - 20160801112607 --> Model Class Initialized
+INFO - 20160801112607 --> Model Class Initialized
+DEBUG - 20160801112607 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112607 --> Model Class Initialized
+DEBUG - 20160801112607 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112607 --> Model Class Initialized
+DEBUG - 20160801112607 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112607 --> Model Class Initialized
+DEBUG - 20160801112607 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112607 --> Model Class Initialized
+DEBUG - 20160801112607 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112607 --> Model Class Initialized
+DEBUG - 20160801112607 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112607 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112607 --> Model Class Initialized
+DEBUG - 20160801112607 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20160801112607 --> Config file loaded: C:\xampp\htdocs\guruprivat\application\config/paypal.php
+INFO - 20160801112609 --> Config Class Initialized
+INFO - 20160801112609 --> Hooks Class Initialized
+DEBUG - 20160801112609 --> UTF-8 Support Enabled
+INFO - 20160801112609 --> Utf8 Class Initialized
+INFO - 20160801112609 --> URI Class Initialized
+INFO - 20160801112609 --> Router Class Initialized
+INFO - 20160801112609 --> Output Class Initialized
+INFO - 20160801112609 --> Security Class Initialized
+DEBUG - 20160801112609 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112609 --> Input Class Initialized
+INFO - 20160801112609 --> Language Class Initialized
+INFO - 20160801112609 --> Loader Class Initialized
+INFO - 20160801112609 --> Helper loaded: url_helper
+INFO - 20160801112609 --> Helper loaded: myfunction_helper
+INFO - 20160801112609 --> Database Driver Class Initialized
+INFO - 20160801112609 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112609 --> Controller Class Initialized
+INFO - 20160801112609 --> Model Class Initialized
+INFO - 20160801112609 --> Model Class Initialized
+INFO - 20160801112609 --> Model Class Initialized
+DEBUG - 20160801112609 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112609 --> Model Class Initialized
+DEBUG - 20160801112609 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112609 --> Model Class Initialized
+DEBUG - 20160801112609 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112609 --> Model Class Initialized
+DEBUG - 20160801112609 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112609 --> Model Class Initialized
+DEBUG - 20160801112609 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112609 --> Model Class Initialized
+DEBUG - 20160801112609 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112609 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112609 --> Helper loaded: timezone_helper
+DEBUG - 20160801112609 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112609 --> Final output sent to browser
+DEBUG - 20160801112609 --> Total execution time: 0.0730
+INFO - 20160801112710 --> Config Class Initialized
+INFO - 20160801112710 --> Hooks Class Initialized
+DEBUG - 20160801112710 --> UTF-8 Support Enabled
+INFO - 20160801112710 --> Utf8 Class Initialized
+INFO - 20160801112710 --> URI Class Initialized
+INFO - 20160801112710 --> Router Class Initialized
+INFO - 20160801112710 --> Output Class Initialized
+INFO - 20160801112710 --> Security Class Initialized
+DEBUG - 20160801112710 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112710 --> Input Class Initialized
+INFO - 20160801112710 --> Language Class Initialized
+INFO - 20160801112710 --> Loader Class Initialized
+INFO - 20160801112710 --> Helper loaded: url_helper
+INFO - 20160801112710 --> Helper loaded: myfunction_helper
+INFO - 20160801112710 --> Database Driver Class Initialized
+INFO - 20160801112710 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112710 --> Controller Class Initialized
+INFO - 20160801112710 --> Model Class Initialized
+INFO - 20160801112710 --> Model Class Initialized
+INFO - 20160801112710 --> Model Class Initialized
+DEBUG - 20160801112710 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112710 --> Model Class Initialized
+DEBUG - 20160801112710 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112710 --> Model Class Initialized
+DEBUG - 20160801112710 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112710 --> Model Class Initialized
+DEBUG - 20160801112710 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112710 --> Model Class Initialized
+DEBUG - 20160801112710 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112710 --> Model Class Initialized
+DEBUG - 20160801112710 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112710 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112710 --> Helper loaded: timezone_helper
+DEBUG - 20160801112710 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112710 --> Final output sent to browser
+DEBUG - 20160801112710 --> Total execution time: 0.0630
+INFO - 20160801112810 --> Config Class Initialized
+INFO - 20160801112810 --> Hooks Class Initialized
+DEBUG - 20160801112810 --> UTF-8 Support Enabled
+INFO - 20160801112810 --> Utf8 Class Initialized
+INFO - 20160801112810 --> URI Class Initialized
+INFO - 20160801112810 --> Router Class Initialized
+INFO - 20160801112810 --> Output Class Initialized
+INFO - 20160801112810 --> Security Class Initialized
+DEBUG - 20160801112810 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112810 --> Input Class Initialized
+INFO - 20160801112810 --> Language Class Initialized
+INFO - 20160801112810 --> Loader Class Initialized
+INFO - 20160801112810 --> Helper loaded: url_helper
+INFO - 20160801112810 --> Helper loaded: myfunction_helper
+INFO - 20160801112810 --> Database Driver Class Initialized
+INFO - 20160801112810 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112810 --> Controller Class Initialized
+INFO - 20160801112810 --> Model Class Initialized
+INFO - 20160801112810 --> Model Class Initialized
+INFO - 20160801112810 --> Model Class Initialized
+DEBUG - 20160801112810 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112810 --> Model Class Initialized
+DEBUG - 20160801112810 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112810 --> Model Class Initialized
+DEBUG - 20160801112810 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112810 --> Model Class Initialized
+DEBUG - 20160801112810 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112810 --> Model Class Initialized
+DEBUG - 20160801112810 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112810 --> Model Class Initialized
+DEBUG - 20160801112810 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112810 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112810 --> Helper loaded: timezone_helper
+DEBUG - 20160801112810 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112810 --> Final output sent to browser
+DEBUG - 20160801112810 --> Total execution time: 0.0690
+INFO - 20160801112910 --> Config Class Initialized
+INFO - 20160801112910 --> Hooks Class Initialized
+DEBUG - 20160801112910 --> UTF-8 Support Enabled
+INFO - 20160801112910 --> Utf8 Class Initialized
+INFO - 20160801112910 --> URI Class Initialized
+INFO - 20160801112910 --> Router Class Initialized
+INFO - 20160801112910 --> Output Class Initialized
+INFO - 20160801112910 --> Security Class Initialized
+DEBUG - 20160801112910 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801112910 --> Input Class Initialized
+INFO - 20160801112910 --> Language Class Initialized
+INFO - 20160801112910 --> Loader Class Initialized
+INFO - 20160801112910 --> Helper loaded: url_helper
+INFO - 20160801112910 --> Helper loaded: myfunction_helper
+INFO - 20160801112910 --> Database Driver Class Initialized
+INFO - 20160801112910 --> Session: Class initialized using 'database' driver.
+INFO - 20160801112910 --> Controller Class Initialized
+INFO - 20160801112910 --> Model Class Initialized
+INFO - 20160801112910 --> Model Class Initialized
+INFO - 20160801112910 --> Model Class Initialized
+DEBUG - 20160801112910 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112910 --> Model Class Initialized
+DEBUG - 20160801112910 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112910 --> Model Class Initialized
+DEBUG - 20160801112910 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112910 --> Model Class Initialized
+DEBUG - 20160801112910 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112910 --> Model Class Initialized
+DEBUG - 20160801112910 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112910 --> Model Class Initialized
+DEBUG - 20160801112910 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801112910 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801112910 --> Helper loaded: timezone_helper
+DEBUG - 20160801112910 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801112910 --> Final output sent to browser
+DEBUG - 20160801112910 --> Total execution time: 0.0690
+INFO - 20160801113010 --> Config Class Initialized
+INFO - 20160801113010 --> Hooks Class Initialized
+DEBUG - 20160801113010 --> UTF-8 Support Enabled
+INFO - 20160801113010 --> Utf8 Class Initialized
+INFO - 20160801113010 --> URI Class Initialized
+INFO - 20160801113010 --> Router Class Initialized
+INFO - 20160801113010 --> Output Class Initialized
+INFO - 20160801113010 --> Security Class Initialized
+DEBUG - 20160801113010 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113010 --> Input Class Initialized
+INFO - 20160801113010 --> Language Class Initialized
+INFO - 20160801113010 --> Loader Class Initialized
+INFO - 20160801113010 --> Helper loaded: url_helper
+INFO - 20160801113010 --> Helper loaded: myfunction_helper
+INFO - 20160801113010 --> Database Driver Class Initialized
+INFO - 20160801113010 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113010 --> Controller Class Initialized
+INFO - 20160801113010 --> Model Class Initialized
+INFO - 20160801113010 --> Model Class Initialized
+INFO - 20160801113010 --> Model Class Initialized
+DEBUG - 20160801113010 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113010 --> Model Class Initialized
+DEBUG - 20160801113010 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113010 --> Model Class Initialized
+DEBUG - 20160801113010 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113010 --> Model Class Initialized
+DEBUG - 20160801113010 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113010 --> Model Class Initialized
+DEBUG - 20160801113010 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113010 --> Model Class Initialized
+DEBUG - 20160801113010 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113010 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113010 --> Helper loaded: timezone_helper
+DEBUG - 20160801113010 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113010 --> Final output sent to browser
+DEBUG - 20160801113010 --> Total execution time: 0.0710
+INFO - 20160801113110 --> Config Class Initialized
+INFO - 20160801113110 --> Hooks Class Initialized
+DEBUG - 20160801113110 --> UTF-8 Support Enabled
+INFO - 20160801113110 --> Utf8 Class Initialized
+INFO - 20160801113110 --> URI Class Initialized
+INFO - 20160801113110 --> Router Class Initialized
+INFO - 20160801113110 --> Output Class Initialized
+INFO - 20160801113110 --> Security Class Initialized
+DEBUG - 20160801113110 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113110 --> Input Class Initialized
+INFO - 20160801113110 --> Language Class Initialized
+INFO - 20160801113110 --> Loader Class Initialized
+INFO - 20160801113110 --> Helper loaded: url_helper
+INFO - 20160801113110 --> Helper loaded: myfunction_helper
+INFO - 20160801113110 --> Database Driver Class Initialized
+INFO - 20160801113110 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113110 --> Controller Class Initialized
+INFO - 20160801113110 --> Model Class Initialized
+INFO - 20160801113110 --> Model Class Initialized
+INFO - 20160801113110 --> Model Class Initialized
+DEBUG - 20160801113110 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113110 --> Model Class Initialized
+DEBUG - 20160801113110 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113110 --> Model Class Initialized
+DEBUG - 20160801113110 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113110 --> Model Class Initialized
+DEBUG - 20160801113111 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113111 --> Model Class Initialized
+DEBUG - 20160801113111 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113111 --> Model Class Initialized
+DEBUG - 20160801113111 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113111 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113111 --> Helper loaded: timezone_helper
+DEBUG - 20160801113111 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113111 --> Final output sent to browser
+DEBUG - 20160801113111 --> Total execution time: 0.0730
+INFO - 20160801113211 --> Config Class Initialized
+INFO - 20160801113211 --> Hooks Class Initialized
+DEBUG - 20160801113211 --> UTF-8 Support Enabled
+INFO - 20160801113211 --> Utf8 Class Initialized
+INFO - 20160801113211 --> URI Class Initialized
+INFO - 20160801113211 --> Router Class Initialized
+INFO - 20160801113211 --> Output Class Initialized
+INFO - 20160801113211 --> Security Class Initialized
+DEBUG - 20160801113211 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113211 --> Input Class Initialized
+INFO - 20160801113211 --> Language Class Initialized
+INFO - 20160801113211 --> Loader Class Initialized
+INFO - 20160801113211 --> Helper loaded: url_helper
+INFO - 20160801113211 --> Helper loaded: myfunction_helper
+INFO - 20160801113211 --> Database Driver Class Initialized
+INFO - 20160801113211 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113211 --> Controller Class Initialized
+INFO - 20160801113211 --> Model Class Initialized
+INFO - 20160801113211 --> Model Class Initialized
+INFO - 20160801113211 --> Model Class Initialized
+DEBUG - 20160801113211 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113211 --> Model Class Initialized
+DEBUG - 20160801113211 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113211 --> Model Class Initialized
+DEBUG - 20160801113211 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113211 --> Model Class Initialized
+DEBUG - 20160801113211 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113211 --> Model Class Initialized
+DEBUG - 20160801113211 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113211 --> Model Class Initialized
+DEBUG - 20160801113211 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113211 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113211 --> Helper loaded: timezone_helper
+DEBUG - 20160801113211 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113211 --> Final output sent to browser
+DEBUG - 20160801113211 --> Total execution time: 0.0710
+INFO - 20160801113311 --> Config Class Initialized
+INFO - 20160801113311 --> Hooks Class Initialized
+DEBUG - 20160801113311 --> UTF-8 Support Enabled
+INFO - 20160801113311 --> Utf8 Class Initialized
+INFO - 20160801113311 --> URI Class Initialized
+INFO - 20160801113311 --> Router Class Initialized
+INFO - 20160801113311 --> Output Class Initialized
+INFO - 20160801113311 --> Security Class Initialized
+DEBUG - 20160801113311 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113311 --> Input Class Initialized
+INFO - 20160801113311 --> Language Class Initialized
+INFO - 20160801113311 --> Loader Class Initialized
+INFO - 20160801113311 --> Helper loaded: url_helper
+INFO - 20160801113311 --> Helper loaded: myfunction_helper
+INFO - 20160801113311 --> Database Driver Class Initialized
+INFO - 20160801113311 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113311 --> Controller Class Initialized
+INFO - 20160801113311 --> Model Class Initialized
+INFO - 20160801113311 --> Model Class Initialized
+INFO - 20160801113311 --> Model Class Initialized
+DEBUG - 20160801113311 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113311 --> Model Class Initialized
+DEBUG - 20160801113311 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113311 --> Model Class Initialized
+DEBUG - 20160801113311 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113311 --> Model Class Initialized
+DEBUG - 20160801113311 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113311 --> Model Class Initialized
+DEBUG - 20160801113311 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113311 --> Model Class Initialized
+DEBUG - 20160801113311 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113311 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113311 --> Helper loaded: timezone_helper
+DEBUG - 20160801113311 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113311 --> Final output sent to browser
+DEBUG - 20160801113311 --> Total execution time: 0.0640
+INFO - 20160801113404 --> Config Class Initialized
+INFO - 20160801113404 --> Hooks Class Initialized
+DEBUG - 20160801113404 --> UTF-8 Support Enabled
+INFO - 20160801113404 --> Utf8 Class Initialized
+INFO - 20160801113404 --> URI Class Initialized
+INFO - 20160801113404 --> Router Class Initialized
+INFO - 20160801113404 --> Output Class Initialized
+INFO - 20160801113404 --> Security Class Initialized
+DEBUG - 20160801113404 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113404 --> Input Class Initialized
+INFO - 20160801113404 --> Language Class Initialized
+INFO - 20160801113404 --> Loader Class Initialized
+INFO - 20160801113404 --> Helper loaded: url_helper
+INFO - 20160801113404 --> Helper loaded: myfunction_helper
+INFO - 20160801113404 --> Database Driver Class Initialized
+INFO - 20160801113404 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113404 --> Controller Class Initialized
+INFO - 20160801113404 --> Model Class Initialized
+INFO - 20160801113404 --> Model Class Initialized
+INFO - 20160801113404 --> Model Class Initialized
+DEBUG - 20160801113404 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113404 --> Model Class Initialized
+DEBUG - 20160801113404 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113404 --> Model Class Initialized
+DEBUG - 20160801113404 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113404 --> Model Class Initialized
+DEBUG - 20160801113404 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113404 --> Model Class Initialized
+DEBUG - 20160801113404 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113404 --> Model Class Initialized
+DEBUG - 20160801113404 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113404 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113404 --> Model Class Initialized
+DEBUG - 20160801113404 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20160801113404 --> Config file loaded: C:\xampp\htdocs\guruprivat\application\config/paypal.php
+INFO - 20160801113411 --> Config Class Initialized
+INFO - 20160801113411 --> Hooks Class Initialized
+DEBUG - 20160801113411 --> UTF-8 Support Enabled
+INFO - 20160801113411 --> Utf8 Class Initialized
+INFO - 20160801113411 --> URI Class Initialized
+INFO - 20160801113411 --> Router Class Initialized
+INFO - 20160801113411 --> Output Class Initialized
+INFO - 20160801113411 --> Security Class Initialized
+DEBUG - 20160801113411 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113411 --> Input Class Initialized
+INFO - 20160801113411 --> Language Class Initialized
+INFO - 20160801113411 --> Loader Class Initialized
+INFO - 20160801113411 --> Helper loaded: url_helper
+INFO - 20160801113411 --> Helper loaded: myfunction_helper
+INFO - 20160801113411 --> Database Driver Class Initialized
+INFO - 20160801113411 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113411 --> Controller Class Initialized
+INFO - 20160801113411 --> Model Class Initialized
+INFO - 20160801113411 --> Model Class Initialized
+INFO - 20160801113411 --> Model Class Initialized
+DEBUG - 20160801113411 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113411 --> Model Class Initialized
+DEBUG - 20160801113411 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113411 --> Model Class Initialized
+DEBUG - 20160801113411 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113411 --> Model Class Initialized
+DEBUG - 20160801113411 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113411 --> Model Class Initialized
+DEBUG - 20160801113411 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113411 --> Model Class Initialized
+DEBUG - 20160801113411 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113411 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113411 --> Helper loaded: timezone_helper
+DEBUG - 20160801113411 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113411 --> Final output sent to browser
+DEBUG - 20160801113411 --> Total execution time: 0.0640
+INFO - 20160801113428 --> Config Class Initialized
+INFO - 20160801113428 --> Hooks Class Initialized
+DEBUG - 20160801113428 --> UTF-8 Support Enabled
+INFO - 20160801113428 --> Utf8 Class Initialized
+INFO - 20160801113428 --> URI Class Initialized
+INFO - 20160801113428 --> Router Class Initialized
+INFO - 20160801113428 --> Output Class Initialized
+INFO - 20160801113428 --> Security Class Initialized
+DEBUG - 20160801113428 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113428 --> Input Class Initialized
+INFO - 20160801113428 --> Language Class Initialized
+INFO - 20160801113428 --> Loader Class Initialized
+INFO - 20160801113428 --> Helper loaded: url_helper
+INFO - 20160801113428 --> Helper loaded: myfunction_helper
+INFO - 20160801113428 --> Database Driver Class Initialized
+INFO - 20160801113428 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113428 --> Controller Class Initialized
+INFO - 20160801113428 --> Model Class Initialized
+INFO - 20160801113428 --> Model Class Initialized
+INFO - 20160801113428 --> Model Class Initialized
+DEBUG - 20160801113428 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113428 --> Model Class Initialized
+DEBUG - 20160801113428 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113428 --> Model Class Initialized
+DEBUG - 20160801113428 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113428 --> Model Class Initialized
+DEBUG - 20160801113428 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113428 --> Model Class Initialized
+DEBUG - 20160801113428 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113428 --> Model Class Initialized
+DEBUG - 20160801113428 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113428 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113428 --> Model Class Initialized
+DEBUG - 20160801113428 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20160801113428 --> Config file loaded: C:\xampp\htdocs\guruprivat\application\config/paypal.php
+INFO - 20160801113512 --> Config Class Initialized
+INFO - 20160801113512 --> Hooks Class Initialized
+DEBUG - 20160801113512 --> UTF-8 Support Enabled
+INFO - 20160801113512 --> Utf8 Class Initialized
+INFO - 20160801113512 --> URI Class Initialized
+INFO - 20160801113512 --> Router Class Initialized
+INFO - 20160801113512 --> Output Class Initialized
+INFO - 20160801113512 --> Security Class Initialized
+DEBUG - 20160801113512 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113512 --> Input Class Initialized
+INFO - 20160801113512 --> Language Class Initialized
+INFO - 20160801113512 --> Loader Class Initialized
+INFO - 20160801113512 --> Helper loaded: url_helper
+INFO - 20160801113512 --> Helper loaded: myfunction_helper
+INFO - 20160801113512 --> Database Driver Class Initialized
+INFO - 20160801113512 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113512 --> Controller Class Initialized
+INFO - 20160801113512 --> Model Class Initialized
+INFO - 20160801113512 --> Model Class Initialized
+INFO - 20160801113512 --> Model Class Initialized
+DEBUG - 20160801113512 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113512 --> Model Class Initialized
+DEBUG - 20160801113512 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113512 --> Model Class Initialized
+DEBUG - 20160801113512 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113512 --> Model Class Initialized
+DEBUG - 20160801113512 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113512 --> Model Class Initialized
+DEBUG - 20160801113512 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113512 --> Model Class Initialized
+DEBUG - 20160801113512 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113512 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113512 --> Helper loaded: timezone_helper
+DEBUG - 20160801113512 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113512 --> Final output sent to browser
+DEBUG - 20160801113512 --> Total execution time: 0.0800
+INFO - 20160801113612 --> Config Class Initialized
+INFO - 20160801113612 --> Hooks Class Initialized
+DEBUG - 20160801113612 --> UTF-8 Support Enabled
+INFO - 20160801113612 --> Utf8 Class Initialized
+INFO - 20160801113612 --> URI Class Initialized
+INFO - 20160801113612 --> Router Class Initialized
+INFO - 20160801113612 --> Output Class Initialized
+INFO - 20160801113612 --> Security Class Initialized
+DEBUG - 20160801113612 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113612 --> Input Class Initialized
+INFO - 20160801113612 --> Language Class Initialized
+INFO - 20160801113612 --> Loader Class Initialized
+INFO - 20160801113612 --> Helper loaded: url_helper
+INFO - 20160801113612 --> Helper loaded: myfunction_helper
+INFO - 20160801113612 --> Database Driver Class Initialized
+INFO - 20160801113612 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113612 --> Controller Class Initialized
+INFO - 20160801113612 --> Model Class Initialized
+INFO - 20160801113612 --> Model Class Initialized
+INFO - 20160801113612 --> Model Class Initialized
+DEBUG - 20160801113612 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113612 --> Model Class Initialized
+DEBUG - 20160801113612 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113612 --> Model Class Initialized
+DEBUG - 20160801113612 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113612 --> Model Class Initialized
+DEBUG - 20160801113612 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113612 --> Model Class Initialized
+DEBUG - 20160801113612 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113612 --> Model Class Initialized
+DEBUG - 20160801113612 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113612 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113612 --> Helper loaded: timezone_helper
+DEBUG - 20160801113612 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113612 --> Final output sent to browser
+DEBUG - 20160801113612 --> Total execution time: 0.0640
+INFO - 20160801113712 --> Config Class Initialized
+INFO - 20160801113712 --> Hooks Class Initialized
+DEBUG - 20160801113712 --> UTF-8 Support Enabled
+INFO - 20160801113712 --> Utf8 Class Initialized
+INFO - 20160801113712 --> URI Class Initialized
+INFO - 20160801113712 --> Router Class Initialized
+INFO - 20160801113712 --> Output Class Initialized
+INFO - 20160801113712 --> Security Class Initialized
+DEBUG - 20160801113712 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113712 --> Input Class Initialized
+INFO - 20160801113712 --> Language Class Initialized
+INFO - 20160801113712 --> Loader Class Initialized
+INFO - 20160801113712 --> Helper loaded: url_helper
+INFO - 20160801113712 --> Helper loaded: myfunction_helper
+INFO - 20160801113712 --> Database Driver Class Initialized
+INFO - 20160801113712 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113712 --> Controller Class Initialized
+INFO - 20160801113712 --> Model Class Initialized
+INFO - 20160801113712 --> Model Class Initialized
+INFO - 20160801113712 --> Model Class Initialized
+DEBUG - 20160801113712 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113712 --> Model Class Initialized
+DEBUG - 20160801113712 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113712 --> Model Class Initialized
+DEBUG - 20160801113712 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113712 --> Model Class Initialized
+DEBUG - 20160801113712 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113712 --> Model Class Initialized
+DEBUG - 20160801113712 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113712 --> Model Class Initialized
+DEBUG - 20160801113712 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113712 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113712 --> Helper loaded: timezone_helper
+DEBUG - 20160801113712 --> Notification class already loaded. Second attempt ignored.
+INFO - 20160801113712 --> Final output sent to browser
+DEBUG - 20160801113712 --> Total execution time: 0.0700
+INFO - 20160801113715 --> Config Class Initialized
+INFO - 20160801113715 --> Hooks Class Initialized
+DEBUG - 20160801113715 --> UTF-8 Support Enabled
+INFO - 20160801113715 --> Utf8 Class Initialized
+INFO - 20160801113715 --> URI Class Initialized
+INFO - 20160801113715 --> Router Class Initialized
+INFO - 20160801113715 --> Output Class Initialized
+INFO - 20160801113715 --> Security Class Initialized
+DEBUG - 20160801113715 --> Global POST, GET and COOKIE data sanitized
+INFO - 20160801113715 --> Input Class Initialized
+INFO - 20160801113715 --> Language Class Initialized
+INFO - 20160801113715 --> Loader Class Initialized
+INFO - 20160801113715 --> Helper loaded: url_helper
+INFO - 20160801113715 --> Helper loaded: myfunction_helper
+INFO - 20160801113715 --> Database Driver Class Initialized
+INFO - 20160801113715 --> Session: Class initialized using 'database' driver.
+INFO - 20160801113715 --> Controller Class Initialized
+INFO - 20160801113715 --> Model Class Initialized
+INFO - 20160801113715 --> Model Class Initialized
+INFO - 20160801113715 --> Model Class Initialized
+DEBUG - 20160801113715 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113715 --> Model Class Initialized
+DEBUG - 20160801113715 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113715 --> Model Class Initialized
+DEBUG - 20160801113715 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113715 --> Model Class Initialized
+DEBUG - 20160801113715 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113715 --> Model Class Initialized
+DEBUG - 20160801113715 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113715 --> Model Class Initialized
+DEBUG - 20160801113715 --> Db_trans class already loaded. Second attempt ignored.
+INFO - 20160801113715 --> Language file loaded: language/indonesia/id_lang.php
+INFO - 20160801113715 --> Model Class Initialized
+DEBUG - 20160801113715 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20160801113715 --> Config file loaded: C:\xampp\htdocs\guruprivat\application\config/paypal.php

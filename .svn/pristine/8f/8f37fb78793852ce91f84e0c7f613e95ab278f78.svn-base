@@ -1,0 +1,448 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Course extends MY_Controller {
+	public function __construct() {
+        parent::__construct();
+	}
+
+	/* Start Admin Pages */
+
+	public function program(){
+		$this->check_user_access();
+
+		$data = array(
+			'active_menu_id' => 'course-program',
+			'title_page' => 'Course Program',
+			'title' => 'course'
+			);
+		// get category data
+		$data['category'] = $this->content->get_category_data('category_part', 'course');
+		$this->open_admin_page('admin/course/category', $data);
+	}
+
+	public function module_tryout(){
+		$this->check_user_access();
+
+		$data = array(
+			'active_menu_id' => 'course-module-tryout',
+			'title_page' => 'Course Program - Module & Try-Out',
+			'title' => 'course'
+			);
+		// get category data
+		$data['category'] = $this->course->get_category_module_tryout();
+		$this->open_admin_page('admin/course/category_set_modul_tryout', $data);
+	}
+
+
+	/* End Admin Pages */
+	public function add_category(){
+		$data = array(
+			'category' => $this->input->post('category', TRUE),
+			'world_scale' => $this->input->post('scale', TRUE),
+			'slug' => $this->input->post('slug', TRUE),
+			'parent_id' => $this->input->post('parent', TRUE),
+			'category_part' => 'course'
+			);
+		$add_cat = $this->common->add_to_table('post_categories', $data);
+
+		$this->set_session_response_no_redirect('add', $add_cat);
+
+		redirect('course/category');
+	}
+
+	public function update_category(){
+		$id = $this->input->post('id', TRUE);
+
+		// $this->load->model('Content_m', 'content');
+		$this->load->model('Common', 'common');
+
+		$data = array(
+			'category' => $this->input->post('category', TRUE),
+			'world_scale' => $this->input->post('scale', TRUE),
+			'slug' => $this->input->post('slug', TRUE),
+			'parent_id' => $this->input->post('parent', TRUE),
+			'category_part' => 'course'
+			);
+		$upd_cat = $this->common->update_data_on_table('post_categories', 'id', $id, $data);
+
+		$this->set_session_response_no_redirect('update', $upd_cat);
+
+		redirect('course/category');
+	}
+
+	public function get_category_by_id(){
+		// $this->load->model('Content_m', 'content');
+		// get category data
+		$category = $this->content->get_category_data('id', $this->uri->segment(3));
+		$data = $category->row();
+		$response = array(
+			'category' => $data->category,
+			'world_scale' => $data->world_scale,
+			'slug' => $data->slug,
+			'parent_id' => $data->parent_id
+			);
+		
+		echo json_encode($response);
+	}
+
+	function update_module_tryout($id){
+		$this->load->model('Common', 'common');
+		// check if exist
+		$check = $this->course->get_category_module_tryout(array('c.category_id' => $id));
+		// if not exist then add
+		if($check==false){
+			$media_id = $this->upload_module_cover();
+			$add_data = array(
+				'category_id' => $id,
+				'module_price' => $this->input->post('module-price', true),
+				'tryout_price' => $this->input->post('tryout-price', true)
+				);
+			$add = $this->common->add_to_table('course_categories_data', $add_data);
+		}
+		else{
+			$media_id = $this->upload_module_cover();
+			$upd_data = array(
+				'module_price' => $this->input->post('module-price', true),
+				'tryout_price' => $this->input->post('tryout-price', true)
+				);
+			$upd = $this->common->update_data_on_table('course_categories_data', 'category_id', $id, $upd_data);
+		}
+
+		$this->load->model('Media_m', 'media');
+		$media = $this->media->get_file_name($media_id);
+		$response = array(
+			'module_price' => $this->input->post('module-price', true),
+			'tryout_price' => $this->input->post('tryout-price', true),
+			'module_cover' => $media
+			);
+
+		echo json_encode($response);
+	}
+
+	function update_module_cover(){
+		$this->load->model('Common', 'common');
+		// check if exist
+		$check = $this->course->get_category_module_tryout(array('c.category_id' => $this->input->post('id', true)));
+		// if not exist then add
+		if($check==false){
+			$media_id = $this->upload_module_cover();
+			if(empty($this->any_error)){
+				$add_data = array(
+					'category_id' => $this->input->post('id', true),
+					'module_cover' => $media_id
+					);
+				$add = $this->common->add_to_table('course_categories_data', $add_data);
+			}
+		}
+		else{
+			$media_id = $this->upload_module_cover();
+			if(empty($this->any_error)){
+				$upd_data = array(
+					'module_cover' => $media_id
+					);
+				$upd = $this->common->update_data_on_table('course_categories_data', 'category_id', $this->input->post('id', true), $upd_data);
+			}
+		}
+
+
+		redirect('course/module_tryout');
+	}
+
+	function upload_module_cover(){
+		$user_id = $this->session->userdata('userid');
+
+		$this->load->library('upload');
+		$config = array(
+			'upload_path' => './assets/uploads/',
+			'allowed_types' => 'jpg|png|gif|jpeg',
+			'max_size' => 1000,
+			'overwrite' => false,
+			'remove_spaces' => true
+		);
+		$this->upload->initialize($config);
+		
+		if ( ! $this->upload->do_upload('module-file'))
+			return 0;
+
+		else{
+			$upload_data = $this->upload->data();
+			//insert document data in database
+	
+			$data = array(
+				'file_name' => $upload_data['file_name'],
+				'file_type' => $upload_data['file_type'],
+				'file_extension' => $upload_data['file_ext'],
+				'img_width' => $upload_data['image_width'],
+				'img_height' => $upload_data['image_height'],
+			);
+
+			$add_media = $this->common->add_to_table('media_files', $data); // return the last inserted id
+			return $add_media->output;
+        }
+	}
+	// function my_calendar(){
+	// 	$user_id = $this->session->userdata('userid');
+
+	// 	$calendar = $this->course->get_my_calendar($user_id);
+	// 	if($calendar==false)
+	// 		$response = array();
+	// 	else{
+	// 		foreach($calendar->result() as $cal){
+	// 			if($cal->title=="Open"){
+	// 				$color = '#32B420';
+	// 				$title = $cal->title;
+	// 			}
+					
+	// 			else if($cal->title=="Jam Kursus"){
+	// 				$color = '#3B5998';
+	// 				$title = $cal->title;
+	// 				if($cal->enroll_id<>''){
+	// 					$course = $this->course->get_course_by_enroll_id($cal->enroll_id);
+	// 					$title = 'Kursus '.$course->course_category;
+	// 				}
+	// 			}
+					
+	// 			$response[] = array(
+	// 				'id' => $cal->schedule_id,
+	// 				'title' => $title,
+	// 				'start' => $cal->open_date_start,
+	// 				'end' => $cal->open_date_end,
+	// 				'color' => $color
+	// 				);
+	// 		}
+	// 	}
+
+	// 	echo json_encode($response);
+	// }
+
+	function add_absence(){
+		$data = array(
+			'enroll_id' => $this->input->post('enroll', TRUE),
+			'teach_date' => $this->input->post('teach-date', TRUE),
+			'time_start' => $this->input->post('start-time', TRUE),
+			'time_end' => $this->input->post('end-time', TRUE)
+			);
+		$this->load->model('Common', 'common');
+		$add = $this->common->add_to_table('course_monitoring', $data);
+
+		redirect('frontpage/fill_course_monitoring/'.$data['enroll_id']);
+	}
+
+	function set_absence(){
+		$monitoring_id = $this->input->get('mon', TRUE);
+		$enroll_id = $this->input->get('enr', TRUE);
+
+		if($this->session->userdata('level') == "student")
+			$data = array(
+				'student_entry' => 'true',
+				'student_entry_timestamp' => date('Y-m-d H:i:s')
+				);
+		else if($this->session->userdata('level') == "teacher")
+			$data = array(
+				'teacher_entry' => 'true',
+				'teacher_entry_timestamp' => date('Y-m-d H:i:s')
+				);
+
+		$this->load->model('Common', 'common');
+		$set = $this->common->update_data_on_table('course_monitoring', 'monitoring_id', $monitoring_id, $data);
+
+		redirect('frontpage/fill_course_monitoring/'.$enroll_id);
+	}
+
+	function submit_payment(){
+		$data = array(
+			'enroll_id' => $this->input->post('enroll-id', TRUE),
+			'termin' => $this->input->post('termin', TRUE),
+			'nominal' => $this->input->post('nominal', TRUE),
+			'transfer_date' => $this->input->post('transfer-date', TRUE)
+			);
+		$this->load->model('Common', 'common');
+		$add = $this->common->add_to_table('teacher_commissions', $data);
+		$this->set_session_response_no_redirect('add', $add);
+
+		// sending email confirmation to teacher
+		$course = $this->course->get_course_by_enroll_id($this->input->post('enroll-id', TRUE));
+		
+		// get teacher data
+		$this->load->model('User_m', 'user');
+		$get_teacher_info = $this->user->get_user_data(array('user_id' => $course->teacher_id));
+		$teacher_info = $get_teacher_info->row();
+		
+		$this->load->library('My_PHPMailer');
+        $mail = new PHPMailer();
+        $mail->IsSMTP(); // we are going to use SMTP
+        $mail->SMTPAuth   = true; // enabled SMTP authentication
+        $mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
+        $mail->Host       = $this->config->item('smtp_host');      // setting GMail as our SMTP server
+        $mail->Port       = $this->config->item('smtp_port');                   // SMTP port to connect to GMail
+        $mail->Username   = $this->config->item('smtp_user');  // user email address
+        $mail->Password   = $this->config->item('smtp_pass');            // password in GMail
+        $mail->SetFrom('admin@tutordoors.com', 'Admin Tutordoors');  //Who is sending the email
+        $mail->Subject    = $this->lang->line('salary_payment_for_teacher');
+
+        $mail->Body      = $this->load->view('email_tpl/teacher_commission_'.$this->session->userdata('language'), $data, true);
+        $mail->AltBody    = "Plain text message";
+        $destino = $teacher_info->email_login; // Who is addressed the email to
+        $mail->AddAddress($destino, $teacher_info->first_name.' '.$teacher_info->last_name);
+
+        if(!$mail->Send()) {
+        	$this->logging->insert_event_logging('send_email_teacher_commission', '', 'false', $mail->ErrorInfo);
+        } else {
+            $this->logging->insert_event_logging('send_email_teacher_commission', '', 'true', 'Message sent');
+        }
+
+		redirect('cms/view_teacher_commission');
+	}
+
+	function admin_completed_course(){
+		$this->check_user_access();
+		
+		$data = array(
+			'active_menu_id' => 'course-completed',
+			'title_page' => 'Completed Course'
+			);
+
+		$data['completed_course'] = $this->course->get_completed_enrollment();
+		$this->export_query($this->db->last_query());
+
+		$this->open_admin_page('admin/completed_course', $data);
+	}
+
+	function complete_course($enroll_id){
+		$data = array('is_completed' => 'true');
+		
+		$set = $this->common->update_data_on_table('course_enrollment', 'enroll_id', $enroll_id, $data);
+
+		redirect('frontpage/completed_course/');
+	}
+
+	public function view_running_course(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'course-running',
+			'title_page' => 'Running Course'
+			);
+
+		$data['running_course'] = $this->course->get_course_enrollment();
+		// print_r($this->db->last_query());
+
+		$this->open_admin_page('admin/course/running', $data);
+	}
+
+	public function enrollment_detail(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'course-running',
+			'title_page' => 'Detil Enrollment Course'
+			);
+
+		$data['detail'] = $this->course->get_course_enrollment($this->input->get('id', TRUE));
+		$data['absence'] = $this->course->get_course_monitoring_by_enrollid($this->input->get('id', TRUE));
+		// print_r($this->db->last_query());
+
+		$this->open_admin_page('admin/course/enrollment_detail', $data);
+	}
+
+	function get_category_scale($id){
+		$category = $this->course->get_course_category_by_id($id);
+
+		$response = array('scale' => $category->world_scale);
+
+		echo json_encode($response);
+	}
+
+	function get_monitoring_time(){
+		$mon_id = $this->input->get('mon', true);
+		$monitoring_info = $this->course->get_monitoring_data(array('monitoring_id' => $mon_id));
+
+		$response = array(
+			'time_start' => date_format(new DateTime($monitoring_info->row()->time_start), 'H:i'),
+			'time_end' => date_format(new DateTime($monitoring_info->row()->time_end), 'H:i'),
+			'enroll_id' => $monitoring_info->row()->enroll_id
+			);
+		echo json_encode($response);
+	}
+
+	function edit_absence_time(){
+		$data = array(
+			'time_start' => $this->input->post('start-time', TRUE),
+			'time_end' => $this->input->post('end-time', TRUE)
+			);
+		$this->load->model('Common', 'common');
+		$upd = $this->common->update_data_on_table('course_monitoring', 'monitoring_id', $this->input->post('id'), $data);
+
+		redirect('frontpage/fill_course_monitoring/'.$this->input->post('enroll'));
+	}
+
+	function export($what)
+	{
+		//load the excel library
+		$this->load->library('excel');
+		$this->load->helper('excel_helper');
+		// styling
+		$style_top_header = set_top_header();
+		$alignment = set_alignment();
+
+		if($what=="program")
+		{
+			$data = $this->content->get_category_data('category_part', 'course');
+			$header = array(
+				'CATEGORY', 'PARENT CATEGORY', 'WORLD SCALE', 'SLUG (FRIENDLY & UNIQUE WORDS)'
+				);
+	        //activate worksheet number 1
+	        $this->excel->setActiveSheetIndex(0);
+	        //name the worksheet
+	        $this->excel->getActiveSheet()->setTitle('All course programs');
+
+	        $this->excel->getActiveSheet()->getStyle('A1:D1')->applyFromArray($style_top_header);
+			$this->excel->getActiveSheet()->getStyle('A1:D1')->applyFromArray($alignment);
+
+			// filling the header
+			$col = 0; // starting at A1
+			$row = 1;
+			foreach($header as $head){
+				$this->excel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $head);
+				$col++;
+			}
+			// filling the content
+			$col = 0; // starting at A2
+			$row = 2;
+			foreach($data->result() as $prog)
+			{
+				// get parent if it's a child
+	        	$parent_info = $this->content->get_category_by_id($prog->parent_id);
+	        	$parent_name = ($parent_info<>false ? $parent_info->category : ' - ');
+
+				$this->excel->getActiveSheet()->setCellValueByColumnAndRow(0, $row, $prog->category); // A2
+				$this->excel->getActiveSheet()->setCellValueByColumnAndRow(1, $row, $parent_name); // B2
+				$this->excel->getActiveSheet()->setCellValueByColumnAndRow(2, $row, ucwords($prog->world_scale)); // C2
+				$this->excel->getActiveSheet()->setCellValueByColumnAndRow(3, $row, $prog->slug); // D2
+
+				$row++;
+			}
+
+			// set auto width
+			foreach(range('A','D') as $columnID) {
+			    $this->excel->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
+			}
+	 
+	        $filename='Course Programs.xls'; //save our workbook as this file name
+
+		}
+
+		header('Content-Type: application/vnd.ms-excel'); //mime type
+	 
+        header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
+ 
+        header('Cache-Control: max-age=0'); //no cache
+                    
+        //save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
+        //if you want to save it as .XLSX Excel 2007 format
+ 
+        $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');
+ 
+        //force user to download the Excel file without writing it to server's HD
+        $objWriter->save('php://output');
+	}
+}

@@ -1,0 +1,81 @@
+ERROR - 20170906062042 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\tutordoors2.0\application\vendor/autoload.php was not found.
+DEBUG - 20170906062042 --> UTF-8 Support Enabled
+DEBUG - 20170906062042 --> No URI present. Default controller set.
+DEBUG - 20170906062042 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 20170906062042 --> Config file loaded: C:\xampp\htdocs\tutordoors2.0\application\config/mail_smtp.php
+DEBUG - 20170906112043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112044 --> Total execution time: 1.6778
+ERROR - 20170906062659 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\tutordoors2.0\application\vendor/autoload.php was not found.
+DEBUG - 20170906062659 --> UTF-8 Support Enabled
+DEBUG - 20170906062659 --> No URI present. Default controller set.
+DEBUG - 20170906062659 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 20170906062659 --> Config file loaded: C:\xampp\htdocs\tutordoors2.0\application\config/mail_smtp.php
+DEBUG - 20170906112659 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112659 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112659 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112659 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112659 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112659 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112659 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906112659 --> Total execution time: 0.1994
+ERROR - 20170906085935 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\tutordoors2.0\application\vendor/autoload.php was not found.
+DEBUG - 20170906085935 --> UTF-8 Support Enabled
+DEBUG - 20170906085935 --> Global POST, GET and COOKIE data sanitized
+ERROR - 20170906085935 --> 404 Page Not Found: Assets/images
+ERROR - 20170906085940 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\tutordoors2.0\application\vendor/autoload.php was not found.
+DEBUG - 20170906085940 --> UTF-8 Support Enabled
+DEBUG - 20170906085940 --> Global POST, GET and COOKIE data sanitized
+ERROR - 20170906085940 --> 404 Page Not Found: Assets/images
+ERROR - 20170906090420 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\tutordoors2.0\application\vendor/autoload.php was not found.
+DEBUG - 20170906090420 --> UTF-8 Support Enabled
+DEBUG - 20170906090420 --> No URI present. Default controller set.
+DEBUG - 20170906090420 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 20170906090420 --> Config file loaded: C:\xampp\htdocs\tutordoors2.0\application\config/mail_smtp.php
+DEBUG - 20170906140420 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140420 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140420 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140420 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140420 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140420 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140420 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140420 --> Total execution time: 0.7544
+ERROR - 20170906090456 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\tutordoors2.0\application\vendor/autoload.php was not found.
+DEBUG - 20170906090456 --> UTF-8 Support Enabled
+DEBUG - 20170906090456 --> No URI present. Default controller set.
+DEBUG - 20170906090456 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 20170906090456 --> Config file loaded: C:\xampp\htdocs\tutordoors2.0\application\config/mail_smtp.php
+DEBUG - 20170906140456 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140456 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140456 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140456 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140456 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140456 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906140456 --> Db_trans class already loaded. Second attempt ignored.
+ERROR - 20170906140456 --> Severity: Notice --> Undefined variable: li_link C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+ERROR - 20170906140456 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+ERROR - 20170906140456 --> Severity: Notice --> Undefined variable: li_name C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+ERROR - 20170906140456 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+DEBUG - 20170906140456 --> Total execution time: 0.2427
+ERROR - 20170906152025 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\tutordoors2.0\application\vendor/autoload.php was not found.
+DEBUG - 20170906152026 --> UTF-8 Support Enabled
+DEBUG - 20170906152027 --> No URI present. Default controller set.
+DEBUG - 20170906152027 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 20170906152028 --> Config file loaded: C:\xampp\htdocs\tutordoors2.0\application\config/mail_smtp.php
+DEBUG - 20170906202042 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906202042 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906202042 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906202042 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906202043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906202043 --> Db_trans class already loaded. Second attempt ignored.
+DEBUG - 20170906202043 --> Db_trans class already loaded. Second attempt ignored.
+ERROR - 20170906202047 --> Severity: Notice --> Undefined variable: li_link C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+ERROR - 20170906202047 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+ERROR - 20170906202047 --> Severity: Notice --> Undefined variable: li_name C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+ERROR - 20170906202047 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\tutordoors2.0\application\views\iknow\footer.php 44
+DEBUG - 20170906202047 --> Total execution time: 21.4855

@@ -1,0 +1,957 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Cms extends MY_Controller {
+	public function __construct() {
+        parent::__construct();
+        $this->load->helper('timezone');
+	}
+
+	/* pages begin */
+	public function index(){
+		redirect('cms/dashboard');
+	}
+
+	function dashboard(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'admin-dashboard',
+			'title_page' => 'Dashboard',
+			'title' => ''
+			);
+		
+		$data['total_student'] = $this->user->count_user_level('student');
+		$data['total_teacher'] = $this->user->count_user_level('teacher');
+		$data['total_enrollment'] = $this->course->count_course_enrollment();
+		$get_unverified = $this->teacher->get_unverified();
+		$data['total_unverified'] = $get_unverified->num_rows();
+		$get_verified = $this->teacher->get_verified();
+		$data['total_verified'] = $get_verified->num_rows();
+		
+
+		// $count_order = $this->order->view_order_summary();
+		// $data['count_order'] = ($count_order<>false ? $count_order->num_rows() : 0);
+
+		// $grouping_order = $this->order->count_order_grouping_date();
+		// $data['total_sales_per_date'] = $grouping_order->result();
+
+		$this->open_admin_page('admin/dashboard', $data);
+	}
+
+	public function login(){
+		$this->session->set_userdata('prev_page', $this->session->userdata('curr_page'));
+		$this->session->set_userdata('curr_page', $this->uri->segment(1).'/'.$this->uri->segment(2));
+		$this->load->view('admin/login');
+	}
+
+	public function post_new(){
+		$this->check_user_access();
+		
+		$data = array(
+			'active_menu_id' => 'post-add',
+			'title_page' => 'Add new post',
+			'title' => 'add'
+			);
+		// get category
+		$data['category'] = $this->content->get_category('category_part', 'post');
+		$this->open_admin_page('admin/post_creation', $data);
+	}
+
+	public function view_post(){
+		$this->check_user_access();
+		$type = $this->input->get('ty');
+		
+		$data = array(
+			'active_menu_id' => $type.'-add',
+			'title_page' => 'View all '.$type.'s',
+			'title' => 'view'
+			);
+		
+		$data['post'] = $this->content->get_post_data(array('type' => $type));
+		
+		$this->open_admin_page('admin/'.$type.'_view_all', $data);
+	}
+
+	public function post_edit(){
+		$this->check_user_access();
+		
+		$data = array(
+			'active_menu_id' => 'post-add',
+			'title_page' => 'Edit post',
+			'title' => 'edit'
+			);
+		// get category
+		$data['category'] = $this->content->get_category('category_part', 'post');
+		// get post data by post id and return to client
+		$post_data = $this->content->get_post_data(array('type' => 'post' , 'a.id' => $this->input->get('id', TRUE)));
+		$data['post_data'] = $post_data->row();
+		// get post image
+		$data['post_image'] = $this->content->get_post_image($data['post_data']->primary_image);
+		// get additional images
+		$data['more_images'] = $this->content->get_post_additional_images($this->input->get('id', TRUE));
+
+		$this->open_admin_page('admin/post_creation', $data);
+	}
+
+	public function category_view(){
+		$this->check_user_access();
+		$type = $this->input->get('ty',TRUE);
+
+		// $this->load->model('Content_m', 'content');
+
+		$data = array(
+			'active_menu_id' => $type.'-category',
+			'title_page' => 'Category',
+			'title' => $type
+			);
+		// get category data
+		$data['category'] = $this->content->get_category_data('category_part', $type);
+		
+		$this->open_admin_page('admin/category_crud', $data);
+	}
+
+	public function set_options(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'company-info',
+			'title_page' => 'Global Company Info'
+			);
+
+		$get_options = $this->content->get_all_options();
+		foreach($get_options->result() as $param){
+			$options[$param->parameter_name]['desc'] = $param->description;
+			$options[$param->parameter_name]['value'] = $param->parameter_value;
+		}
+		$data['options'] = $options;
+
+		$this->open_admin_page('admin/setting', $data);
+	}
+
+	function setup_bank()
+	{
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'setup-bank',
+			'title_page' => 'Setup Company\'s Bank'
+			);
+		
+		$this->load->model('Bank_m', 'bank');
+		$data['banks'] = $this->bank->get_bank_data();
+
+		$this->open_admin_page('admin/base_setup/bank', $data);
+	}
+
+	public function set_miscellaneous(){
+		$this->check_user_access();
+		$data = array(
+			'am' => 'base_setup',
+			'asm_1' => 'miscellaneous',
+			'title_page' => 'Miscellaneous Setting'
+			);
+
+		$this->load->model('Commerce_m', 'comm');
+		
+		$this->load->model('Bank_m', 'bank');
+		$data['banks'] = $this->bank->get_bank_data();
+
+		// $this->load->model('Content_m', 'content');
+		$get_options = $this->content->get_all_options();
+		foreach($get_options->result() as $param){
+			$options[$param->parameter_name]['desc'] = $param->description;
+			$options[$param->parameter_name]['value'] = $param->parameter_value;
+		}
+		$data['options'] = $options;
+
+		// load shipping cost setting
+		$data['ship_cost'] = $this->comm->get_all_shipping_cost();
+
+		$this->open_admin_page('admin/setting_miscellaneous', $data);
+	}
+
+	public function page_new(){
+		$this->check_user_access();
+		
+		$data = array(
+			'active_menu_id' => 'page-add',
+			'title_page' => 'Add new page',
+			'title' => 'add'
+			);
+		$this->open_admin_page('admin/page_creation', $data);
+	}
+
+	public function page_edit(){
+		$this->check_user_access();
+		
+		$data = array(
+			'active_menu_id' => 'page-add',
+			'title_page' => 'Edit page',
+			'title' => 'edit'
+			);
+		// get post data by post id and return to client
+		$post_data = $this->content->get_post_data(array('type' => 'page','a.id' => $this->input->get('id', TRUE)));
+		
+		$data['page_data'] = $post_data->row();
+		
+		$this->open_admin_page('admin/page_creation', $data);
+	}
+
+	function show_notifications(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'notification',
+			'title_page' => 'Notifications'
+			);
+
+		$id=$this->input->get('id', TRUE);
+
+		$this->load->library('notification');
+
+		if($id=="")
+			$get_data = $this->notification->get_data();
+		else
+			$get_data = $this->notification->get_data('id', $id);
+		// print_r($this->db->last_query());
+		foreach($get_data as $notif){
+			$this->load->model('Common');
+			$data_read = array('has_been_read' => "true");
+			if($notif->has_been_read=="false")
+				$this->Common->update_data_on_table('notifications', 'id', $notif->id, $data_read);
+		}
+
+		if($id=="")
+			$get_data = $this->notification->get_data();
+		else
+			$get_data = $this->notification->get_data('id', $id);
+		
+		$data['show_notifications'] = $get_data;
+
+		$this->open_admin_page('admin/notifications', $data);
+	}
+
+	function media_view_all(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'media',
+			'title_page' => 'Media'
+			);
+
+		$data['media'] = $this->content->get_media();
+
+		$this->open_admin_page('admin/media_view_all', $data);
+	}
+
+	function faq(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'post-faq',
+			'title_page' => 'Frequently Asked Questions'
+			);
+
+		$data['faq'] = $this->content->get_faq_posts();
+
+		$this->open_admin_page('admin/content/faq', $data);
+	}
+
+	function faq_form(){
+		$mode = $this->input->get('id')=="" ? "add" : "edit";
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'post-faq',
+			'title_page' => 'Frequently Asked Questions',
+			'mode' => $mode
+			);
+		$data['faq_categories'] = $this->content->get_faq_categories();
+		if($mode=="edit"){
+			// get post data by post id and return to client
+			$post_data = $this->content->get_post_data(array('type' => 'faq' , 'a.id' => $this->input->get('id', TRUE)));
+			$data['post_data'] = $post_data->row();
+		}
+
+		$this->open_admin_page('admin/content/faq_form', $data);
+	}
+
+
+	/* end pages */
+
+	public function add_post(){
+		$data = $this->general_post_data();
+		$add_post = $this->common->add_to_table('posts', $data);
+		$this->set_session_response_no_redirect('add', $add_post);
+		
+		if (!empty($_FILES['image_file']['name']))
+			$this->upload_set_primary_image($add_post->output);
+
+		redirect('cms/post_edit?id='.$add_post->output);
+	}
+
+	public function update_post(){
+		$id = $this->input->get('id', TRUE);
+		$data = $this->general_post_data();
+		$update = $this->common->update_data_on_table('posts', 'id', $id, $data);
+
+		if (!empty($_FILES['image_file']['name']))
+			$this->upload_set_primary_image($id);
+
+		redirect('cms/post_edit?id='.$id);
+	}
+
+	public function delete_post(){
+		$type = $this->input->get('ty');
+		$id = $this->input->get('id', TRUE);
+
+		$post_data = $this->content->get_post_data(array('type' => $type, 'a.id' => $id));
+		$primary_image = $post_data->row()->primary_image;
+
+		$del_post = $this->common->delete_from_table_by_id('posts', 'id', $id);
+		$this->push_if_transaction_error($del_post);
+
+		//get the filename and delete from storage
+		$get = $this->content->get_post_image($primary_image);
+		$filename = $get->file_name;
+		// delete from database
+		$del_media = $this->common->delete_from_table_by_id('media_files', 'id', $primary_image);
+		$this->push_if_transaction_error($del_media);
+		// delete from storage
+		unlink('./assets/uploads/'.$filename);
+
+		if(empty($this->any_error)){
+			$this->session->set_flashdata('err_no', '200');
+			$this->session->set_flashdata('err_msg', 'Data berhasil dihapus');
+		}
+		else{
+			$this->session->set_flashdata('err_no', '204');
+			$this->session->set_flashdata('err_msg', $this->any_error);
+		}
+
+		redirect('cms/view_post?ty='.$type);
+	}
+
+	public function add_page(){
+		$data = $this->general_post_data();
+		$add_page = $this->common->add_to_table('posts', $data);
+		$this->set_session_response_no_redirect('add', $add_page);
+
+		redirect('cms/page_edit?id='.$add_page->output);
+	}
+
+	public function update_page(){
+		$id = $this->input->get('id', TRUE);
+		$data = $this->general_post_data();
+		$update_page = $this->common->update_data_on_table('posts', 'id', $id, $data);
+		$this->set_session_response_no_redirect('update', $update_page);
+
+		redirect('cms/page_edit?id='.$id);
+	}
+
+	function general_post_data(){		
+		$data = array(
+			'title' => ucwords($this->input->post('title', TRUE)),
+			'category' => $this->input->post('category', TRUE),
+			'type' => $this->input->post('type', TRUE),
+			'content' => $this->input->post('content', TRUE),
+			'tags' => $this->input->post('tags', TRUE),
+			'status' => $this->input->post('action', TRUE),
+			'author' => $this->session->userdata('userid'),
+			'url' => $this->input->post('url', TRUE),
+			'link_href' => $this->input->post('link-address', TRUE)
+			);
+
+		return $data;
+	}
+
+	function mapping_product_category($post_id){
+		foreach($this->input->post('cats') as $cat){
+			$data = array('post_id' => $post_id, 'category_id' => $cat);
+			$add_map = $this->common->add_to_table('post_categories_mapping', $data);
+			if(!$add_map->status)
+				array_push($this->any_error, $add_map->output);
+		}
+	}
+
+	public function add_more_images($post_id){
+		$config = array(
+			'upload_path' => './assets/uploads/',
+			'allowed_types' => 'jpg|png|jpeg',
+			'overwrite' => false,
+			'remove_spaces' => true,
+			'max_size' => '4000'
+		);
+
+		foreach ($_FILES['more_images']['name'] as $key => $image)  //fieldname is the form field name
+		{
+			$_FILES['more_images[]']['name']= $_FILES['more_images']['name'][$key];
+	        $_FILES['more_images[]']['type']= $_FILES['more_images']['type'][$key];
+	        $_FILES['more_images[]']['tmp_name']= $_FILES['more_images']['tmp_name'][$key];
+	        $_FILES['more_images[]']['error']= $_FILES['more_images']['error'][$key];
+	        $_FILES['more_images[]']['size']= $_FILES['more_images']['size'][$key];
+
+	        $this->load->library('upload');
+		    $this->upload->initialize($config);
+
+		    if ($this->upload->do_upload('more_images[]')) {
+	            $upload_data = $this->upload->data();
+				//insert document data in database
+				$data = array(
+					'file_name' => $upload_data['file_name'],
+					'file_type' => $upload_data['file_type'],
+					'file_extension' => $upload_data['file_ext'],
+					'img_width' => $upload_data['image_width'],
+					'img_height' => $upload_data['image_height'],
+				);
+				$add_media = $this->common->add_to_table('media_files', $data); // return the last inserted id
+				if(!$add_media->status)
+					array_push($this->any_error, $add_media->output);
+				// mapping post and media
+				$map = array(
+					'post_id' => $post_id,
+					'media_id' => $add_media->output
+					);
+				$map_post_media = $this->common->add_to_table('post_media', $map);
+	        } else {
+	            array_push($this->any_error, 'Error upload file '.$_FILES['more_images']['name'][$key].' . Error message: '.$this->upload->display_errors());
+	        }
+		}
+	}
+
+	function setup_discount($post_id){
+		$cnt = 1;
+		foreach($_POST['quantity-get-discount'] as $key => $disc){
+			$data = array(
+				'post_id' => $post_id,
+				'on_quantity' => $disc,
+				'discount' => $_POST['discount-on-quantity'][$key],
+				'order_list' => $cnt
+			);
+			$add_discount = $this->common->add_to_table('product_discounts', $data);
+			if(!$add_discount->status)
+				array_push($this->any_error, $add_discount->output);
+			$cnt++;
+		}
+	}
+
+	public function product_add(){
+		$data = $this->general_post_data();
+		
+		$add_post = $this->common->add_to_table('posts', $data);
+		if($add_post->status){
+			// mapping product category
+			$map_category = $this->mapping_product_category($add_post->output);
+			
+			// insert detail product
+			$product_info = array(
+				'post_id' => $add_post->output,
+				'stock_id' => strtoupper($this->input->post('stock-id', TRUE)),
+				'stock_qty' => strtoupper($this->input->post('stock', TRUE)),
+				'price_buy' => str_replace(',', '', $this->input->post('price-buy', TRUE)),
+				'price_sell' => str_replace(',', '', $this->input->post('price-sell', TRUE)),
+				'currency' => 'Rp',
+				'weight' => $this->input->post('weight', TRUE),
+				'as_best_seller_banner' => ($this->input->post('as_best_seller', TRUE)=="on" ? 'true' : 'false'),
+				'as_special_discount_banner' => ($this->input->post('as_special_discount', TRUE)=="on" ? 'true' : 'false')
+				);
+			$add_product = $this->common->add_to_table('products', $product_info);
+			if(!$add_product->status)
+				array_push($this->any_error, $add_product->output);
+			else
+				$product_id = $add_product->output;
+			// setting up discount
+			$add_discount = $this->setup_discount($add_post->output);
+			
+			// upload image if user upload image
+			if(!empty($_FILES['image_file']['name']))
+				$this->upload_set_primary_image($add_post->output);
+
+			// upload more images if user upload image
+			if(!empty($_FILES['more_images[]']['name']))
+				$this->add_more_images($add_post->output);
+
+		}
+		else
+			array_push($this->any_error, $add_post->output);
+		
+		if(empty($this->any_error)){
+			$this->session->set_flashdata('err_no', '200');
+			$this->session->set_flashdata('err_msg', 'Data berhasil dimasukkan');
+	        redirect('cms/product_edit?po_id='.$add_post->output.'&pr_id='.$product_id);
+		}
+		else{
+			$this->session->set_flashdata('err_no', '204');
+			$this->session->set_flashdata('err_msg', $this->any_error);
+
+			redirect('cms/view_post?ty=product');
+		}
+	}
+
+	public function product_update(){
+		$prod_id = $this->input->post('product_id', TRUE);
+		$post_id = $this->input->post('post_id', TRUE);
+
+		$data = $this->general_post_data();
+
+		$upd_post = $this->common->update_data_on_table('posts', 'id', $post_id, $data);
+		$this->push_if_transaction_error($upd_post);
+		// mapping product category
+		// erase data first then add
+		$del_map_cat = $this->common->delete_from_table_by_id('post_categories_mapping', 'post_id', $post_id);
+		$this->push_if_transaction_error($del_map_cat);
+		
+		// mapping start
+		$this->mapping_product_category($post_id);
+		// insert detail product
+		$product_info = array(
+			'stock_id' => $this->input->post('stock-id', TRUE),
+			'stock_qty' => strtoupper($this->input->post('stock', TRUE)),
+			'price_buy' => str_replace(',', '', $this->input->post('price-buy', TRUE)),
+			'price_sell' => str_replace(',', '', $this->input->post('price-sell', TRUE)),
+			'currency' => 'Rp',
+			'weight' => $this->input->post('weight', TRUE),
+			'as_best_seller_banner' => ($this->input->post('as_best_seller', TRUE)=="on" ? 'true' : 'false'),
+			'as_special_discount_banner' => ($this->input->post('as_special_discount', TRUE)=="on" ? 'true' : 'false')
+			);
+		$upd_product = $this->common->update_data_on_table('products', 'id', $prod_id, $product_info);
+		$this->push_if_transaction_error($upd_product);
+		
+		// setting up discount
+		$del_discount = $this->common->delete_from_table_by_id('product_discounts', 'post_id', $post_id);
+		$this->push_if_transaction_error($del_discount);
+		$this->setup_discount($post_id);
+		
+		// upload image if user upload image
+		if(!empty($_FILES['image_file']['name']))
+			$this->upload_set_primary_image($post_id);
+
+		// upload more images if user upload image
+		// print_r($_FILES['more_images']['name']);
+		if(!empty($_FILES['more_images']['name'])){
+			
+			$this->add_more_images($post_id);
+		}
+			
+
+		if(empty($this->any_error)){
+			$this->session->set_flashdata('err_no', '200');
+			$this->session->set_flashdata('err_msg', 'Data berhasil diubah');
+		}
+		else{
+			$this->session->set_flashdata('err_no', '204');
+			$this->session->set_flashdata('err_msg', $this->any_error);
+		}
+
+        redirect('cms/product_edit?po_id='.$post_id.'&pr_id='.$prod_id);
+	}
+
+	function upload_set_primary_image($post_id){
+		$this->load->library('upload');
+		$config = array(
+			'upload_path' => './assets/uploads/',
+			'allowed_types' => 'jpg|png|gif|jpeg',
+			'overwrite' => false,
+			'remove_spaces' => true,
+			'max_size' => '50000'
+		);
+		$this->upload->initialize($config);
+		
+		if ( ! $this->upload->do_upload('image_file')){
+			// var_dump($this->upload->display_errors());
+			// var_dump($this->upload->file_type);
+
+			array_push($this->any_error, 'Error on set primary image: '.$this->upload->display_errors());
+		} 
+		else{
+			// print_r('gak ono');
+			$upload_data = $this->upload->data();
+			//insert document data in database
+	
+			$data = array(
+				'file_name' => $upload_data['file_name'],
+				'file_type' => $upload_data['file_type'],
+				'file_extension' => $upload_data['file_ext'],
+				'img_width' => $upload_data['image_width'],
+				'img_height' => $upload_data['image_height'],
+			);
+
+			$add_media = $this->common->add_to_table('media_files', $data); // return the last inserted id
+			$this->push_if_transaction_error($add_media);
+			// mapping post and media
+			$map = array('primary_image' => $add_media->output);
+			$map_post_media = $this->common->update_data_on_table('posts', 'id', $post_id, $map);
+			$this->push_if_transaction_error($map_post_media);
+        }
+	}
+
+	function get_product_detail($post_data){
+		foreach($post_data as $row){
+			$prod_data = $this->content->get_product_detail_by_post_id($row->id);
+			$product[$row->id] = $prod_data;
+		}
+
+		return $product;
+	}
+
+	public function get_category_by_id(){
+		// $this->load->model('Content_m', 'content');
+		// get category data
+		$category = $this->content->get_category_data('id', $this->uri->segment(3));
+		$data = $category->row();
+		$response = array(
+			'category' => $data->category,
+			'slug' => $data->slug,
+			'parent_id' => $data->parent_id
+			);
+		
+		echo json_encode($response);
+	}
+
+	public function category_add(){
+		$type = $this->input->post('type', TRUE);
+
+		$data = array(
+			'category' => $this->input->post('category', TRUE),
+			'slug' => $this->input->post('slug', TRUE),
+			'parent_id' => $this->input->post('parent', TRUE),
+			'category_part' => $type
+			);
+		$add_cat = $this->common->add_to_table('post_categories', $data);
+
+		$this->set_session_response_no_redirect('add', $add_cat);
+
+		redirect('cms/category_view?ty='.$type);
+	}
+
+	public function category_update(){
+		$type = $this->input->post('type', TRUE);
+		$id = $this->input->post('id', TRUE);
+
+		$data = array(
+			'category' => $this->input->post('category', TRUE),
+			'slug' => $this->input->post('slug', TRUE),
+			'parent_id' => $this->input->post('parent', TRUE),
+			'category_part' => $type
+			);
+		$upd_cat = $this->common->update_data_on_table('post_categories', 'id', $id, $data);
+
+		$this->set_session_response_no_redirect('update', $upd_cat);
+
+		redirect('cms/category_view?ty='.$type);
+	}
+
+	public function category_delete(){
+		$type = $this->input->get('ty', TRUE);
+		$id = $this->input->get('id', TRUE);
+
+		$del_cat = $this->common->delete_from_table_by_id('post_categories', 'id', $id);
+
+		$this->set_session_response_no_redirect('delete', $del_cat);
+
+		redirect('cms/category_view?ty='.$type);
+	}
+
+	public function opt_web_update(){
+		$this->update_options_fetch_all_input();
+		redirect('cms/set_options');
+	}
+
+	function opt_socmed_update(){
+		$this->update_options_fetch_all_input();
+		redirect('cms/set_options?tab=socmed');
+	}
+
+	public function opt_company_update(){
+		$this->update_options_fetch_all_input();
+		redirect('cms/set_options?tab=company');
+	}
+
+	public function opt_payroll_update(){
+		$this->update_options_fetch_all_input();
+		redirect('cms/set_miscellaneous?tab=payroll');
+	}
+
+	public function opt_order_update(){
+		$this->update_options_fetch_all_input();
+		redirect('cms/set_miscellaneous?tab=order');
+	}
+
+	function update_options_fetch_all_input(){
+		foreach($this->input->post() as $key => $input){
+			$upd = $this->common->update_data_on_table('options', 'parameter_name', $key, array('parameter_value' => $input));
+			$this->push_if_transaction_error($upd);
+		}
+
+		$this->set_session_response_no_redirect_by_error('update');
+	}
+
+	public function post_media_delete(){
+		$media_id = $this->input->get('media', TRUE);
+		$post_id = $this->input->get('po_id', TRUE);
+		$prod_id = $this->input->get('pr_id', TRUE);
+
+		// $this->load->model('content_m', 'content');
+		//get the filename and delete from storage
+		$get = $this->content->get_post_image($media_id);
+		$filename = $get->file_name;
+		unlink('./assets/uploads/'.$filename);
+
+		$this->load->library('Db_trans');
+		$this->db_trans->delete_from_table_by_id('media_files', 'id', $media_id);
+
+		if($prod_id<>"")
+			redirect('cms/product_edit?po_id='.$post_id.'&pr_id='.$prod_id);
+		else
+			redirect('cms/post_edit?id='.$post_id);
+	}
+
+	public function get_category_under_root(){
+		$root_id = $this->input->get('root');
+		$post_id = $this->input->get('post');
+
+		// $this->load->model('Content_m', 'content');
+
+		$get = $this->content->get_categories_under_root($root_id);
+		$mapped_category = array();
+		if($post_id <> ""){ // if post id fulfilled then it's an edit mode
+			$get_category = $this->content->get_mapped_post_categories($post_id); 
+			
+			foreach($get_category->result() as $row)
+				array_push($mapped_category, $row->category_id);
+		}
+			
+		if($get==false)
+			$response['status'] = '204';
+		else{
+			$response['status'] = '200';
+			foreach($get->result() as $row){
+				$response['result'][] = array(
+					'id' => $row->id,
+					'name' => $row->category,
+					'mapped' => in_array($row->id, $mapped_category)
+					);
+			}
+		}
+		
+		echo json_encode($response);
+	}
+
+	public function change_bank_active(){
+		$id = $this->uri->segment(3);
+		$status = $this->uri->segment(4);
+
+		$data = array('active' => $status);
+		$upd_active = $this->common->update_data_on_table('bank_accounts', 'bank_id', $id, $data);
+
+		redirect('cms/set_miscellaneous?tab=bank');
+	}
+
+	public function bank_add(){
+		$data = array(
+			'bank_name' => $this->input->post('name', TRUE),
+			'bank_account_number' => $this->input->post('number', TRUE),
+			'bank_holder_name' => $this->input->post('account-name', TRUE),
+			'bank_branch' => $this->input->post('branch', TRUE),
+			'bank_city' => $this->input->post('city', TRUE),
+			'active' => 'false'
+			);
+		$add_bank = $this->common->add_to_table('bank_accounts', $data);
+		$this->set_session_response_no_redirect('add', $add_bank);
+
+		redirect('cms/set_miscellaneous');
+	}
+
+	public function bank_update(){
+		$id = $this->input->post('id', TRUE);
+		$data = array(
+			'bank_name' => $this->input->post('name', TRUE),
+			'bank_account_number' => $this->input->post('number', TRUE),
+			'bank_holder_name' => $this->input->post('account-name', TRUE),
+			'bank_branch' => $this->input->post('branch', TRUE),
+			'bank_city' => $this->input->post('city', TRUE)
+			);
+		$upd_bank = $this->common->update_data_on_table('bank_accounts', 'bank_id', $id, $data);
+		$this->set_session_response_no_redirect('update', $upd_bank);
+
+		redirect('cms/set_miscellaneous');
+	}
+
+	function bank_get_data_by_id(){
+		$id = $this->uri->segment(3);
+		$this->load->model('Bank_m', 'bank');
+		$bank = $this->bank->get_bank_by_id($id);
+
+		$response = array(
+			'id' => $bank->bank_id,
+			'name' => $bank->bank_name,
+			'account_name' => $bank->bank_holder_name,
+			'number' => $bank->bank_account_number,
+			'branch' => $bank->bank_branch,
+			'city' => $bank->bank_city
+			);
+
+		echo json_encode($response);
+	}
+
+	function count_notification(){ 
+		$this->load->library('notification');
+		$get_notif = $this->notification->get_data_both_send_receiver($this->session->userdata('userid'));
+		$response['notifications'] = array();
+		$response['notif_unread'] = $this->notification->count_unread_by_userid($this->session->userdata('userid'));
+		if($get_notif<>false)
+			foreach($get_notif->result() as $row){
+				$response['notifications'][] = array(
+					'id' => $row->id,
+					'category' => $row->category,
+					'title' => $row->title,
+					'content' => $row->content,
+					'has_been_read' => $row->has_been_read
+					);
+			}
+
+		echo json_encode($response);
+	}
+
+	function media_add(){
+		$this->load->library('upload');
+		$this->load->library('Db_trans');
+		$config = array(
+			'upload_path' => './assets/uploads/',
+			'allowed_types' => 'jpg|png|jpeg|mp3|mp4|wmv',
+			'overwrite' => false,
+			'remove_spaces' => true,
+			'max_size' => '50000'
+		);
+		$this->upload->initialize($config);
+		
+		if ( ! $this->upload->do_upload('image_file')){
+			//$error = array('error' => $this->upload->display_errors());
+			$this->session->set_flashdata('err_no', "204");
+			$this->session->set_flashdata('err_msg', $this->upload->display_errors());
+		} 
+		else{
+			$upload_data = $this->upload->data();
+			//insert document data in database
+	
+			$data = array(
+				'file_name' => $upload_data['file_name'],
+				'file_type' => $upload_data['file_type'],
+				'file_extension' => $upload_data['file_ext'],
+				'img_width' => $upload_data['image_width'],
+				'img_height' => $upload_data['image_height'],
+			);
+			$insert_file = $this->db_trans->insert_data('media_files', $data); // return the last inserted id
+        }
+
+		redirect('cms/media_view_all');
+	}
+
+	function media_delete(){
+		$this->load->library('Db_trans');
+		// $this->load->model('Content_m', 'content');
+
+		$media_id = $this->uri->segment(3);
+		$any_in_post = false;
+		// check if the media is in any post or post_media
+		if($this->content->check_media_in_post($media_id))
+			$any_in_post = true;
+		if($this->content->check_media_in_post_media($media_id))
+			$any_in_post = true;
+
+		if($any_in_post){
+			$this->session->set_flashdata('err_no', "204");
+			$this->session->set_flashdata('err_msg', "Media you wish to delete is embedded in a post, please change image in your post then delete it.");
+		}
+		else{
+			//get the filename and delete from storage
+			$get = $this->content->get_post_image($media_id);
+			$filename = $get->file_name;
+			// delete from database
+			$this->db_trans->delete_from_table_by_id('media_files', 'id', $media_id);
+			// delete from storage
+			unlink('./assets/uploads/'.$filename);
+		}
+		redirect('cms/media_view_all');
+	}
+
+	public function add_faq(){
+		$data = array(
+			'title' => $this->input->post('title', true),
+			'content' => $this->input->post('content', true),
+			'url' => $this->input->post('url', true),
+			'list_order' => $this->input->post('list_order', true),
+			'category' => $this->input->post('category', true),
+			'type' => $this->input->post('type', true)
+			);
+		$add = $this->common->add_to_table('posts', $data);
+		$this->set_session_response_no_redirect('add', $add);
+		
+		redirect('cms/faq');
+	}
+
+	public function update_faq($id){
+		$data = array(
+			'title' => $this->input->post('title', true),
+			'content' => $this->input->post('content', true),
+			'url' => $this->input->post('url', true),
+			'list_order' => $this->input->post('list_order', true),
+			'category' => $this->input->post('category', true),
+			'type' => $this->input->post('type', true)
+			);
+		$update = $this->common->update_data_on_table('posts', 'id', $id, $data);
+		$this->set_session_response_no_redirect('update', $update);
+		
+		redirect('cms/faq');
+	}
+
+	public function delete_faq($id){
+		$del_post = $this->common->delete_from_table_by_id('posts', 'id', $id);
+		$this->set_session_response_no_redirect('delete', $del_post);
+
+		redirect('cms/faq');
+	}
+
+	// public function add_coupon(){
+	// 	$this->load->model('Common', 'common');
+		
+	// 	$coupon = array(
+	// 		'coupon_code' => $this->input->post('code', TRUE),
+	// 		'minimum_order' => $this->input->post('min-order', TRUE),
+	// 		'discount' => $this->input->post('discount', TRUE),
+	// 		'description' => $this->input->post('desc', TRUE),
+	// 		'start_time' => $this->input->post('start-time', TRUE),
+	// 		'end_time' => $this->input->post('end-time', TRUE),
+	// 		'status' => 'Created'
+	// 		);
+	// 	$add_coupon = $this->common->add_to_table('coupon_codes', $coupon);
+
+	// 	$this->set_session_response_no_redirect('add', $add_coupon);
+
+	// 	redirect('cms/coupon_view_all');
+	// }
+
+	// public function update_coupon(){
+	// 	$this->load->model('Common', 'common');
+		
+	// 	$coupon = array(
+	// 		'discount' => $this->input->post('discount', TRUE),
+	// 		'minimum_order' => $this->input->post('min-order', TRUE),
+	// 		'description' => $this->input->post('desc', TRUE),
+	// 		'start_time' => $this->input->post('start-time', TRUE),
+	// 		'end_time' => $this->input->post('end-time', TRUE)
+	// 		);
+
+	// 	$upd_coupon = $this->common->update_data_on_table('coupon_codes', 'coupon_code', $this->input->post('code', TRUE), $coupon);
+
+	// 	$this->set_session_response_no_redirect('update', $upd_coupon);
+
+	// 	redirect('cms/coupon_view_all');
+	// }
+
+	// public function delete_coupon(){
+	// 	$this->load->model('Common', 'common');
+		
+	// 	$del_coupon = $this->common->delete_from_table_by_id('coupon_codes', 'coupon_code', $this->input->get('code', TRUE));
+
+	// 	$this->set_session_response_no_redirect('delete', $del_coupon);
+
+	// 	redirect('cms/coupon_view_all');
+	// }
+
+	
+}

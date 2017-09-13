@@ -1,0 +1,206 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Content extends MY_Controller {
+	public function __construct() {
+        parent::__construct();
+        // $this->load->helper('timezone');
+	}
+
+	/* pages begin */
+	function faq(){
+		$data['faq'] = $this->content->get_faq_posts();
+		$data['sub_page_title'] = $this->lang->line('faq_long');
+
+		$data['programs'] = $this->course_lib->count_tutor_under_programs();
+		
+		$data['page_title'] = $this->lang->line('faq_long');
+		$this->open_page('faq', $data);
+	}
+
+	function page($url){
+		$id_array = explode('-', $this->uri->segment(3), 2);
+		if(is_numeric($id_array[0])) // if it's a numeric refer to blog post, else refer to page
+			$filter = array('a.id' => $id_array[0]);
+		else
+			$filter = array(
+				'type' => 'page',
+				'url' => $url,
+				'status' => 'publish'
+				);
+		$get_post = $this->content->get_post_data($filter);
+
+		$data['page'] = $get_post->row();
+		
+		$data['page_title'] = $data['page']->title;
+		$data['sub_page_title'] = $data['page']->title;
+		$data['meta_social_title'] = $data['page']->title;
+		$data['meta_social_image'] = '';
+		$data['meta_social_desc'] = '';
+
+		$data['programs'] = $this->course_lib->count_tutor_under_programs();
+		$data['post_type'] = 'page';
+
+		$this->open_page('page', $data);
+	}
+
+	function contact(){
+		$data['page_title'] = 'Contact Us';
+		$data['hint'] = 
+		$data['meta_social_title'] = $this->lang->line('contact_us');
+		$data['meta_social_image'] = '';
+		$data['meta_social_desc'] = '';
+
+		$this->open_page('page_contact', $data);
+	}
+
+	function blog($slug, $limit_start, $limit_end){
+		$this->load->helper('text');
+		$data['posts'] = $this->content->get_post_category_slug($slug, $limit_start, $limit_end);
+		$data['total_post'] = intval($this->content->count_post_category_slug($slug));
+		$data['page_link'] = ceil(intval($this->content->count_post_category_slug($slug)) / $limit_end);
+		$data['active_pagination_link'] = $limit_start < $limit_end ? 1 : floor($limit_start / $limit_end);
+		
+		$data['page_title'] = 'Blog '.ucwords($slug);
+		$data['sub_page_title'] = 'Blog '.ucwords($slug);
+		$data['meta_social_title'] = 'Blog '.ucwords($slug);
+		$data['meta_social_image'] = '';
+		$data['meta_social_desc'] = '';
+
+		$data['programs'] = $this->course_lib->count_tutor_under_programs();
+
+		$this->open_page('blog', $data);
+	}
+
+	function message_contact(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'message-contact-form',
+			'title_page' => 'Messages on Contact Form',
+			);
+
+		$data['messages'] = $this->content->get_messages_contact();
+
+		$this->open_admin_page('admin/content/message_on_contact_form', $data);
+	}
+
+	function second_top_menu(){
+		$this->check_user_access();
+		$data = array(
+			'active_menu_id' => 'second-top-menu',
+			'title_page' => 'Editing Second Top Menu',
+			);
+
+		$this->load->helper('form');
+
+		$data['menus'] = $this->content->get_menu_by_part('second_top');
+
+		$data['programs'] = $this->content->get_category_data('category_part', 'course');
+
+		// $get_parents = $this->content->get_parent_menu('second_top');
+		// $parents = array();
+		// if($get_parents<>false)
+		// 	foreach($get_parents->result() as $parent)
+		// 		$parents[$parent->id] = $parent->menu_label;
+		// $data['parents'] = $parents;
+
+		$this->open_admin_page('admin/appearance/second_top_menu', $data);
+	}
+
+	/* pages END */
+
+	/* functions begin */
+
+	function set_follow_up($id){
+		$data = array('followed_up' => '1');
+		$upd = $this->common->update_data_on_table('contact_form_messages', 'id', $id, $data);
+
+		if($upd->status)
+			$response['status'] = '200';
+		else $response['status'] = '204';
+
+		echo json_encode($response);
+	}
+
+	function add_second_top(){
+		if($this->input->post('link-method', true)=="empty")
+			$link = '#';
+		else if($this->input->post('link-method', true)=="all")
+			$link = base_url('teacher/program?prog=all');
+		else if($this->input->post('link-method', true)=="program")
+			$link = base_url('teacher/program?prog='.$this->input->post('program', true));
+
+		$data = array(
+			'menu_part' => $this->input->post('part', true),
+			'menu_label' => $this->input->post('label', true),
+			'level' => $this->input->post('level', true),
+			'parent_id' => $this->input->post('parent', true),
+			'ordinal' => $this->input->post('ordinal', true),
+			'link_address' => $link
+			);
+
+		$add = $this->common->add_to_table('appearance_menu', $data);
+		
+		$this->set_session_response_no_redirect('add', $add);
+
+		redirect('content/second_top_menu');
+	}
+
+	function update_second_top(){
+		if($this->input->post('link-method', true)=="empty")
+			$link = '#';
+		else if($this->input->post('link-method', true)=="all")
+			$link = base_url('teacher/program?prog=all');
+		else if($this->input->post('link-method', true)=="program")
+			$link = base_url('teacher/program?prog='.$this->input->post('program', true));
+
+		$data = array(
+			'menu_part' => $this->input->post('part', true),
+			'menu_label' => $this->input->post('label', true),
+			'level' => $this->input->post('level', true),
+			'parent_id' => $this->input->post('parent', true),
+			'ordinal' => $this->input->post('ordinal', true),
+			'link_address' => $link
+			);
+
+		$upd = $this->common->update_data_on_table('appearance_menu', 'id', $this->input->post('id', true), $data);
+		
+		$this->set_session_response_no_redirect('update', $upd);
+
+		redirect('content/second_top_menu');
+	}
+
+	function delete_second_top($id)
+	{
+		// check if parent has child
+        $check_child = $this->content->check_menu_has_child($id);
+        if($check_child==0)
+        {
+			$del = $this->common->delete_from_table_by_id('appearance_menu', 'id', $id);
+			$this->set_session_response_no_redirect('delete', $del);
+        }
+        else
+        {
+        	array_push($this->any_error, 'This menu has child menu. Delete the child first, then retry delete the parent.');
+        	$this->set_session_response_no_redirect_by_error('delete');
+        }
+        redirect('content/second_top_menu');
+	}
+
+	function get_menu_by_id($id)
+	{
+		$menu = $this->content->get_menu_by_id($id);
+		$response = array(
+			'id' => $menu->id,
+			'label' => $menu->menu_label,
+			'link' => $menu->link_address,
+			'level' => $menu->level,
+			'parent' => $menu->parent_id,
+			'ordinal' => $menu->ordinal
+			);
+
+		echo json_encode($response);
+	}
+
+	/* functions END */
+}
